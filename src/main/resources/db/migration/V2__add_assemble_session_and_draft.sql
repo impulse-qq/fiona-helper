@@ -35,7 +35,7 @@ CREATE TABLE slot_draft (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     session_id UUID NOT NULL REFERENCES assemble_session(id),
     slot_id UUID NOT NULL REFERENCES pipeline_slot(id),
-    value VARCHAR(4000) NOT NULL,
+    value VARCHAR(500) NOT NULL,
     filled_at TIMESTAMPTZ DEFAULT NOW()
 );
 

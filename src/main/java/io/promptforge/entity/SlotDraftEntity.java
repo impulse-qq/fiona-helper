@@ -21,7 +21,7 @@ public class SlotDraftEntity extends PanacheEntityBase {
     @Column(name = "slot_id", nullable = false)
     public UUID slotId;
 
-    @Column(name = "value", nullable = false, length = 4000)
+    @Column(name = "value", nullable = false, length = 500)
     public String value;
 
     @Column(name = "filled_at")

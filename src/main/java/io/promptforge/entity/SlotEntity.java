@@ -33,6 +33,14 @@ public class SlotEntity extends PanacheEntityBase {
     @Column(name = "default_value")
     public String defaultValue;
 
+    /** Slot 描述/提示，帮助 Agent 理解该填什么，如 "请为角色生成详细的外貌描述" */
+    @Column(name = "description", length = 512)
+    public String description;
+
+    /** 字数限制，null 表示无限制 */
+    @Column(name = "word_limit")
+    public Integer wordLimit;
+
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     public Instant createdAt;

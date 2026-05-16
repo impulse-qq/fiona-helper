@@ -28,6 +28,10 @@ public class PipelineEntity extends PanacheEntityBase {
     @Column(name = "is_public", nullable = false)
     public boolean isPublic = false;
 
+    /** 项目级固定世界观，如 "赛博朋克" */
+    @Column(name = "world_setting", length = 64)
+    public String worldSetting;
+
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     public Instant createdAt;

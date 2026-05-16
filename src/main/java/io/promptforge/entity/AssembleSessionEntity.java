@@ -33,6 +33,10 @@ public class AssembleSessionEntity extends PanacheEntityBase {
     @Column(name = "created_at", updatable = false)
     public Instant createdAt;
 
+    @Version
+    @Column(name = "version")
+    public int version;
+
     public AssembleSessionEntity() {
     }
 }
