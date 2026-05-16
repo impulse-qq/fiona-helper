@@ -3,6 +3,7 @@ package io.promptforge.service;
 import io.promptforge.dto.*;
 import io.promptforge.entity.*;
 import io.promptforge.repository.*;
+import io.quarkus.logging.Log;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -176,6 +177,7 @@ public class PipelineAssemblerService {
 
     @Transactional
     public InsertResult insertSlotValue(UUID sessionId, UUID slotId, String value, String worldSetting) {
+        long startNanos = System.nanoTime();
         if (worldSetting == null || worldSetting.isBlank()) {
             return new InsertResult(false, "请先调用 get_world_setting 获取世界观，并在提交时显式传入", null, null);
         }
@@ -246,6 +248,8 @@ public class PipelineAssemblerService {
         if (session.currentSlotIndex >= slots.size()) {
             session.status = SessionStatus.COMPLETED;
             sessionRepository.persist(session);
+            logLatency("insertSlotValue", startNanos, sessionId,
+                    "slot=" + currentSlot.name + " status=COMPLETED");
             return new InsertResult(true, currentSlot.name + " 已保存", SessionStatus.COMPLETED, null);
         }
 
@@ -253,10 +257,13 @@ public class PipelineAssemblerService {
         sessionRepository.persist(session);
 
         SlotEntity nextSlot = slots.get(session.currentSlotIndex);
+        logLatency("insertSlotValue", startNanos, sessionId,
+                "slot=" + currentSlot.name + " next=" + nextSlot.name);
         return new InsertResult(true, currentSlot.name + " 已保存", SessionStatus.IN_PROGRESS, toNextStep(nextSlot));
     }
 
     public AssembleResult assemblePrompt(UUID sessionId) {
+        long startNanos = System.nanoTime();
         AssembleSessionEntity session = sessionRepository.findByIdOptional(sessionId)
                 .orElseThrow(() -> new IllegalArgumentException("会话不存在"));
 
@@ -290,7 +297,15 @@ public class PipelineAssemblerService {
             }
         }
 
-        return AssembleResult.success(promptBuilder.toString().trim());
+        String prompt = promptBuilder.toString().trim();
+        logLatency("assemblePrompt", startNanos, sessionId,
+                "slots=" + slots.size() + " promptLen=" + prompt.length());
+        return AssembleResult.success(prompt);
+    }
+
+    private static void logLatency(String op, long startNanos, UUID sessionId, String extra) {
+        long elapsedMicros = (System.nanoTime() - startNanos) / 1_000L;
+        Log.infof("op=%s sessionId=%s elapsedMicros=%d %s", op, sessionId, elapsedMicros, extra);
     }
 
     private SlotInfo toSlotInfo(SlotEntity slot) {
