@@ -18,6 +18,8 @@ import java.util.UUID;
 @ApplicationScoped
 public class PipelineAssemblerService {
 
+    private static final int MAX_VALUE_LENGTH = 500;
+
     @Inject
     PipelineRepository pipelineRepository;
 
@@ -31,7 +33,7 @@ public class PipelineAssemblerService {
     AssembleSessionRepository sessionRepository;
 
     @Inject
-    SlotDraftRepository slotDraftRepository;
+    SlotPromptRepository slotPromptRepository;
 
     @Transactional
     public SessionResponse createSession(UUID pipelineId, UUID characterId) {
@@ -59,13 +61,12 @@ public class PipelineAssemblerService {
             throw new IllegalStateException("Pipeline 没有配置任何 Slot");
         }
 
-        // FIXED slots are auto-completed
+        // FIXED slots are auto-completed using preset slot_prompt (session_id IS NULL)
         int firstFreeIndex = 0;
         for (int i = 0; i < slots.size(); i++) {
             SlotEntity slot = slots.get(i);
             if (slot.constraintType == ConstraintType.FIXED) {
-                SlotDraftEntity draft = new SlotDraftEntity(session.id, slot.id, slot.defaultValue != null ? slot.defaultValue : "");
-                slotDraftRepository.persist(draft);
+                persistPresetForFixedSlot(slot, session);
                 session.currentSlotIndex = i + 1;
                 firstFreeIndex = i + 1;
             } else {
@@ -137,25 +138,25 @@ public class PipelineAssemblerService {
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("Slot 不存在"));
 
-        List<SlotDraftEntity> drafts = slotDraftRepository.findBySessionId(sessionId);
-        Map<UUID, SlotDraftEntity> draftBySlotId = new HashMap<>();
-        for (SlotDraftEntity draft : drafts) {
-            draftBySlotId.put(draft.slotId, draft);
+        List<SlotPromptEntity> prompts = slotPromptRepository.findBySessionId(sessionId);
+        Map<UUID, SlotPromptEntity> promptBySlotId = new HashMap<>();
+        for (SlotPromptEntity p : prompts) {
+            promptBySlotId.put(p.slotId, p);
         }
 
         boolean isCurrent = session.currentSlotIndex < slots.size()
                 && slots.get(session.currentSlotIndex).id.equals(slotId);
 
-        int completedCount = drafts.size();
+        int completedCount = prompts.size();
         int totalCount = slots.size();
         String currentSlotName = session.currentSlotIndex < slots.size()
                 ? slots.get(session.currentSlotIndex).name : null;
 
         List<CompletedSlot> completedSlots = new ArrayList<>();
         for (SlotEntity slot : slots) {
-            SlotDraftEntity draft = draftBySlotId.get(slot.id);
-            if (draft != null) {
-                completedSlots.add(new CompletedSlot(slot.id, slot.name, slot.orderIndex, draft.value));
+            SlotPromptEntity p = promptBySlotId.get(slot.id);
+            if (p != null) {
+                completedSlots.add(new CompletedSlot(slot.id, slot.name, slot.orderIndex, p.content));
             }
         }
 
@@ -172,8 +173,6 @@ public class PipelineAssemblerService {
                 nextStep
         );
     }
-
-    private static final int MAX_VALUE_LENGTH = 500;
 
     @Transactional
     public InsertResult insertSlotValue(UUID sessionId, UUID slotId, String value, String worldSetting) {
@@ -217,9 +216,9 @@ public class PipelineAssemblerService {
                     session.status, toNextStep(currentSlot));
         }
 
-        // Check if already filled
-        Optional<SlotDraftEntity> existingDraft = slotDraftRepository.findBySessionIdAndSlotId(sessionId, slotId);
-        if (existingDraft.isPresent()) {
+        // Check if already filled (session-scoped slot_prompt record exists)
+        Optional<SlotPromptEntity> existing = slotPromptRepository.findBySessionIdAndSlotId(sessionId, slotId);
+        if (existing.isPresent()) {
             if (session.currentSlotIndex + 1 < slots.size()) {
                 SlotEntity nextSlot = slots.get(session.currentSlotIndex + 1);
                 return new InsertResult(false,
@@ -230,18 +229,17 @@ public class PipelineAssemblerService {
             }
         }
 
-        SlotDraftEntity draft = new SlotDraftEntity(sessionId, slotId, value);
-        slotDraftRepository.persist(draft);
+        // Persist agent-provided value into slot_prompt (session-scoped + reusable pool)
+        SlotPromptEntity prompt = new SlotPromptEntity(slotId, session.characterId, sessionId, value, "agent");
+        slotPromptRepository.persist(prompt);
 
         session.currentSlotIndex++;
 
-        // Auto-skip FIXED slots
+        // Auto-skip FIXED slots using preset slot_prompt
         while (session.currentSlotIndex < slots.size()
                 && slots.get(session.currentSlotIndex).constraintType == ConstraintType.FIXED) {
             SlotEntity fixedSlot = slots.get(session.currentSlotIndex);
-            SlotDraftEntity fixedDraft = new SlotDraftEntity(sessionId, fixedSlot.id,
-                    fixedSlot.defaultValue != null ? fixedSlot.defaultValue : "");
-            slotDraftRepository.persist(fixedDraft);
+            persistPresetForFixedSlot(fixedSlot, session);
             session.currentSlotIndex++;
         }
 
@@ -278,29 +276,37 @@ public class PipelineAssemblerService {
                     String.format("请先完成 '%s'（%s）", currentSlot.name, currentSlot.description != null ? currentSlot.description : ""));
         }
 
-        List<SlotDraftEntity> drafts = slotDraftRepository.findBySessionId(sessionId);
+        List<SlotPromptEntity> prompts = slotPromptRepository.findBySessionId(sessionId);
         StringBuilder promptBuilder = new StringBuilder();
 
         for (int i = 0; i < slots.size(); i++) {
             SlotEntity slot = slots.get(i);
             final int index = i;
-            SlotDraftEntity draft = drafts.stream()
-                    .filter(d -> d.slotId.equals(slot.id))
+            SlotPromptEntity p = prompts.stream()
+                    .filter(x -> x.slotId.equals(slot.id))
                     .findFirst()
                     .orElse(null);
 
-            if (draft != null) {
+            if (p != null) {
                 if (index > 0) {
                     promptBuilder.append(" ");
                 }
-                promptBuilder.append(draft.value);
+                promptBuilder.append(p.content);
             }
         }
 
-        String prompt = promptBuilder.toString().trim();
+        String result = promptBuilder.toString().trim();
         logLatency("assemblePrompt", startNanos, sessionId,
-                "slots=" + slots.size() + " promptLen=" + prompt.length());
-        return AssembleResult.success(prompt);
+                "slots=" + slots.size() + " promptLen=" + result.length());
+        return AssembleResult.success(result);
+    }
+
+    private void persistPresetForFixedSlot(SlotEntity slot, AssembleSessionEntity session) {
+        String content = slotPromptRepository.findPresetBySlotId(slot.id, session.characterId)
+                .map(p -> p.content)
+                .orElse("");
+        SlotPromptEntity prompt = new SlotPromptEntity(slot.id, session.characterId, session.id, content, "system");
+        slotPromptRepository.persist(prompt);
     }
 
     private static void logLatency(String op, long startNanos, UUID sessionId, String extra) {
@@ -314,9 +320,27 @@ public class PipelineAssemblerService {
                 slot.name,
                 slot.orderIndex,
                 slot.constraintType,
-                slot.defaultValue,
+                slot.description,
                 slot.wordLimit
         );
+    }
+
+    public List<PipelineSummary> listPipelines(int limit, int offset) {
+        int safeLimit = limit > 0 ? Math.min(limit, 200) : 50;
+        int safeOffset = Math.max(offset, 0);
+        return pipelineRepository.findAll().page(safeOffset / safeLimit, safeLimit)
+                .<PipelineEntity>list().stream()
+                .map(p -> new PipelineSummary(p.id, p.name, p.description, p.worldSetting))
+                .toList();
+    }
+
+    public PipelineDetail getPipelineDetail(UUID pipelineId) {
+        PipelineEntity pipeline = pipelineRepository.findByIdOptional(pipelineId)
+                .orElseThrow(() -> new IllegalArgumentException("Pipeline 不存在"));
+        List<SlotEntity> slots = slotRepository.findByPipelineId(pipelineId);
+        List<SlotInfo> slotInfos = slots.stream().map(this::toSlotInfo).toList();
+        return new PipelineDetail(pipeline.id, pipeline.name, pipeline.description,
+                pipeline.worldSetting, slotInfos);
     }
 
     private NextStep toNextStep(SlotEntity slot) {

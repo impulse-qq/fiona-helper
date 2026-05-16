@@ -30,14 +30,11 @@ public class SlotEntity extends PanacheEntityBase {
     @Column(name = "constraint_type", nullable = false, length = 16)
     public ConstraintType constraintType;
 
-    @Column(name = "default_value")
-    public String defaultValue;
-
-    /** Slot 描述/提示，帮助 Agent 理解该填什么，如 "请为角色生成详细的外貌描述" */
+    /** Slot 描述/提示,帮助 Agent 理解该填什么,如 "请为角色生成详细的外貌描述" */
     @Column(name = "description", length = 512)
     public String description;
 
-    /** 字数限制，null 表示无限制 */
+    /** 字数限制,null 表示无限制 */
     @Column(name = "word_limit")
     public Integer wordLimit;
 
@@ -48,10 +45,9 @@ public class SlotEntity extends PanacheEntityBase {
     public SlotEntity() {
     }
 
-    public SlotEntity(String name, int orderIndex, ConstraintType constraintType, String defaultValue) {
+    public SlotEntity(String name, int orderIndex, ConstraintType constraintType) {
         this.name = name;
         this.orderIndex = orderIndex;
         this.constraintType = constraintType;
-        this.defaultValue = defaultValue;
     }
 }

@@ -78,4 +78,21 @@ public class PipelineAssemblerTools {
             throw new RuntimeException(e.getMessage());
         }
     }
+
+    @io.quarkiverse.mcp.server.Tool(name = "list_pipelines", description = "列出可用 Pipeline 摘要 (id, name, description, worldSetting)。limit 默认 50,最大 200")
+    public java.util.List<io.promptforge.dto.PipelineSummary> listPipelines(Integer limit, Integer offset) {
+        int lim = limit != null ? limit : 50;
+        int off = offset != null ? offset : 0;
+        return assemblerService.listPipelines(lim, off);
+    }
+
+    @io.quarkiverse.mcp.server.Tool(name = "get_pipeline", description = "获取 Pipeline 详情含所有 Slot 的有序定义 (slot 的 description 是给 Agent 的填写指引)")
+    public io.promptforge.dto.PipelineDetail getPipeline(String pipelineId) {
+        try {
+            return assemblerService.getPipelineDetail(UUID.fromString(pipelineId));
+        } catch (IllegalArgumentException e) {
+            Log.warn("获取 Pipeline 详情失败: " + e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
+    }
 }

@@ -9,7 +9,7 @@ public record SlotInfo(
         String name,
         int orderIndex,
         ConstraintType constraintType,
-        String defaultValue,
+        String description,
         Integer wordLimit
 ) {
 }
