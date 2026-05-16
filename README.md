@@ -141,6 +141,10 @@ quarkus.native.container-build=false
 | `get_slot` | 查询指定 Slot 的信息（含已完成列表、下一步指引） |
 | `insert_slot_value` | 填充当前 Slot 的值（严格步进控制），要求显式传入世界观 |
 | `assemble_prompt` | 最终组装，按 orderIndex 拼接所有草稿值为完整 Prompt |
+| `list_pipelines` | 列出可用 Pipeline 摘要(id, name, description, worldSetting) |
+| `get_pipeline` | 获取 Pipeline 详情含所有 Slot 的有序定义 |
+| `submit_score` | (M3a) 对已完成 session 提交评分(1-5)；同 createdBy 重提交=覆盖 |
+| `get_score` | (M3a) 查询某 session 的所有评分 + 平均分 + 评分人数 |
 
 ### 组装流程
 

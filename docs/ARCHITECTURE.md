@@ -63,8 +63,11 @@ Slot 是 Pipeline 中的槽位，有三种约束类型：
 ### AssembleSessionEntity
 每次组装创建一个 Session，记录当前进度（`currentSlotIndex`）和状态（`CREATED`/`IN_PROGRESS`/`COMPLETED`）。
 
-### SlotDraftEntity
-存储 Agent 填充的值，按 Session 隔离。
+### SlotPromptEntity
+统一的 Slot Prompt 内容池(M2 引入,替代 M1 的 `SlotDraftEntity` 和 `pipeline_slot.default_value`):
+- `session_id IS NULL`：预设/手维护内容(原 M1 `default_value` 迁移而来,供 FIXED slot 自动跳过时填充)
+- `session_id` 非空：某次 session 通过 `insert_slot_value` 沉淀的实际填充值
+- `character_id` 字段在 M2 引入,预留按角色筛选预设/可复用 prompt 的能力
 
 ## 流程控制
 
@@ -95,7 +98,7 @@ Agent 获取世界观 + 角色设定
   │
   │ insert_slot_value(sessionId, slotId, value, worldSetting)
   ▼
-SlotDraftEntity (sessionId, slotId, value)
+SlotPromptEntity (sessionId, slotId, characterId, content)
   │
   ▼
 AssembleSessionEntity [IN_PROGRESS, currentSlotIndex++]
