@@ -27,6 +27,7 @@ public class ImageResource {
     @POST
     @Path("/characters/{id}/avatar")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.TEXT_PLAIN)
     @Transactional
     public Response uploadAvatar(@PathParam("id") UUID id, @FormParam("file") FileUpload fileUpload) {
         CharacterEntity character = characterRepository.findByIdOptional(id).orElse(null);
@@ -45,11 +46,22 @@ public class ImageResource {
 
         try {
             long size = Files.size(fileUpload.filePath());
+            if (size == 0) {
+                return Response.status(Response.Status.BAD_REQUEST).entity("文件不能为空").build();
+            }
             if (size > 5L * 1024 * 1024) {
                 return Response.status(Response.Status.BAD_REQUEST).entity("文件大小不能超过 5MB").build();
             }
         } catch (IOException e) {
             return Response.status(Response.Status.BAD_REQUEST).entity("无法读取文件").build();
+        }
+
+        // Delete old avatar file before saving new one
+        if (character.avatarPath != null) {
+            try {
+                Files.deleteIfExists(java.nio.file.Path.of(character.avatarPath));
+            } catch (IOException ignored) {
+            }
         }
 
         String originalName = fileUpload.fileName();

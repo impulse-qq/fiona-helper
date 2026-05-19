@@ -14,6 +14,7 @@ import java.util.UUID;
 
 @Path("/api/characters")
 @Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class CharacterResource {
 
     @Inject
@@ -39,14 +40,12 @@ public class CharacterResource {
     @POST
     @Transactional
     public Response create(CharacterRequest request) {
-        if (request.name == null || request.name.isBlank()) {
-            return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("name 不能为空").build();
-        }
+        Response error = validate(request);
+        if (error != null) return error;
         CharacterEntity entity = new CharacterEntity();
-        entity.name = request.name.trim();
-        entity.baseDesign = request.baseDesign;
-        entity.personality = request.personality;
+        entity.name = request.name().trim();
+        entity.baseDesign = request.baseDesign();
+        entity.personality = request.personality();
         characterRepository.persist(entity);
         return Response.status(Response.Status.CREATED).entity(toResponse(entity)).build();
     }
@@ -59,13 +58,11 @@ public class CharacterResource {
         if (entity == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-        if (request.name == null || request.name.isBlank()) {
-            return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("name 不能为空").build();
-        }
-        entity.name = request.name.trim();
-        entity.baseDesign = request.baseDesign;
-        entity.personality = request.personality;
+        Response error = validate(request);
+        if (error != null) return error;
+        entity.name = request.name().trim();
+        entity.baseDesign = request.baseDesign();
+        entity.personality = request.personality();
         characterRepository.persist(entity);
         return Response.ok(toResponse(entity)).build();
     }
@@ -80,6 +77,21 @@ public class CharacterResource {
         }
         characterRepository.delete(entity);
         return Response.noContent().build();
+    }
+
+    private Response validate(CharacterRequest request) {
+        if (request.name() == null || request.name().isBlank()) {
+            return Response.status(Response.Status.BAD_REQUEST).entity("name 不能为空").build();
+        }
+        if (request.baseDesign() != null && request.baseDesign().length() > 512) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity("baseDesign 不能超过 512 字符").build();
+        }
+        if (request.personality() != null && request.personality().length() > 512) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity("personality 不能超过 512 字符").build();
+        }
+        return null;
     }
 
     private CharacterResponse toResponse(CharacterEntity entity) {
@@ -99,9 +111,5 @@ public class CharacterResource {
         );
     }
 
-    public static class CharacterRequest {
-        public String name;
-        public String baseDesign;
-        public String personality;
-    }
+    public record CharacterRequest(String name, String baseDesign, String personality) {}
 }

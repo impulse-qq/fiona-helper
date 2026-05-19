@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onUnmounted } from 'vue'
 import api from '../api/client.js'
 
 const props = defineProps({
@@ -9,6 +9,7 @@ const props = defineProps({
 const emit = defineEmits(['uploaded'])
 
 const preview = ref(null)
+const previewUrl = ref(null)
 const uploading = ref(false)
 
 function onFileChange(e) {
@@ -22,7 +23,15 @@ function onFileChange(e) {
     alert('文件大小不能超过 5MB')
     return
   }
-  preview.value = URL.createObjectURL(file)
+  if (file.size === 0) {
+    alert('文件不能为空')
+    return
+  }
+  if (previewUrl.value) {
+    URL.revokeObjectURL(previewUrl.value)
+  }
+  previewUrl.value = URL.createObjectURL(file)
+  preview.value = previewUrl.value
   upload(file)
 }
 
@@ -38,6 +47,12 @@ async function upload(file) {
     uploading.value = false
   }
 }
+
+onUnmounted(() => {
+  if (previewUrl.value) {
+    URL.revokeObjectURL(previewUrl.value)
+  }
+})
 </script>
 
 <template>
