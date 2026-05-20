@@ -10,7 +10,10 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Path("/api/pipelines")
 @Produces(MediaType.APPLICATION_JSON)
@@ -51,16 +54,43 @@ public class PipelineResource {
                 "pipelineId = ?1 AND status = ?2", id, SessionStatus.COMPLETED)
                 .list();
 
-        return Response.ok(sessions.stream().map(this::toSessionSummary).toList()).build();
+        if (sessions.isEmpty()) {
+            return Response.ok(List.of()).build();
+        }
+
+        // Batch fetch character names (2 queries total instead of N)
+        List<UUID> characterIds = sessions.stream()
+                .map(s -> s.characterId)
+                .filter(Objects::nonNull)
+                .distinct()
+                .toList();
+        Map<UUID, String> characterNameById = characterIds.isEmpty()
+                ? Map.of()
+                : characterRepository.find("id IN ?1", characterIds).list()
+                        .stream()
+                        .collect(Collectors.toMap(c -> c.id, c -> c.name));
+
+        // Batch fetch image counts (1 query total instead of N)
+        List<UUID> sessionIds = sessions.stream().map(s -> s.id).toList();
+        Map<UUID, Integer> imageCountBySession = sessionImageRepository
+                .find("sessionId IN ?1", sessionIds).list()
+                .stream()
+                .collect(Collectors.groupingBy(
+                        img -> img.sessionId,
+                        Collectors.collectingAndThen(Collectors.counting(), Long::intValue)));
+
+        return Response.ok(sessions.stream()
+                .map(s -> toSessionSummary(s, characterNameById, imageCountBySession))
+                .toList()).build();
     }
 
-    private SessionSummary toSessionSummary(AssembleSessionEntity session) {
-        String characterName = null;
-        if (session.characterId != null) {
-            characterName = characterRepository.findByIdOptional(session.characterId)
-                    .map(c -> c.name).orElse(null);
-        }
-        int imageCount = (int) sessionImageRepository.findBySessionId(session.id).size();
+    private SessionSummary toSessionSummary(AssembleSessionEntity session,
+                                            Map<UUID, String> characterNameById,
+                                            Map<UUID, Integer> imageCountBySession) {
+        String characterName = session.characterId != null
+                ? characterNameById.get(session.characterId)
+                : null;
+        int imageCount = imageCountBySession.getOrDefault(session.id, 0);
 
         return new SessionSummary(
                 session.id,

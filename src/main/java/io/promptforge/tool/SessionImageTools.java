@@ -34,25 +34,32 @@ public class SessionImageTools {
           description = "上传图片到已完成的 session。将 AI 生成的图片归档到对应组装会话。")
     @Transactional
     public String uploadSessionImage(String sessionId, FileUpload imageFile) {
+        UUID sid;
         try {
-            UUID sid = UUID.fromString(sessionId);
-            AssembleSessionEntity session = sessionRepository.findByIdOptional(sid).orElse(null);
-            if (session == null) {
-                throw new RuntimeException("session 不存在");
-            }
-            if (session.status != SessionStatus.COMPLETED) {
-                throw new RuntimeException("session 未完成，不能上传图片");
-            }
+            sid = UUID.fromString(sessionId);
+        } catch (IllegalArgumentException e) {
+            Log.warn("上传 session 图片失败: " + e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
 
-            if (imageFile == null || imageFile.filePath() == null) {
-                throw new RuntimeException("图片文件不能为空");
-            }
+        AssembleSessionEntity session = sessionRepository.findByIdOptional(sid).orElse(null);
+        if (session == null) {
+            throw new RuntimeException("session 不存在");
+        }
+        if (session.status != SessionStatus.COMPLETED) {
+            throw new RuntimeException("session 未完成，不能上传图片");
+        }
 
-            String contentType = imageFile.contentType();
-            if (contentType == null || !contentType.startsWith("image/")) {
-                throw new RuntimeException("只支持图片文件");
-            }
+        if (imageFile == null || imageFile.filePath() == null) {
+            throw new RuntimeException("图片文件不能为空");
+        }
 
+        String contentType = imageFile.contentType();
+        if (contentType == null || !contentType.startsWith("image/")) {
+            throw new RuntimeException("只支持图片文件");
+        }
+
+        try {
             long size = Files.size(imageFile.filePath());
             if (size == 0) {
                 throw new RuntimeException("文件不能为空");
@@ -65,7 +72,7 @@ public class SessionImageTools {
             if (originalName == null || originalName.isBlank()) {
                 originalName = "image";
             }
-            String safeName = originalName.replaceAll("[^a-zA-Z0-9._-]", "_");
+            String safeName = sanitizeFilename(originalName);
             String fileName = System.currentTimeMillis() + "_" + safeName;
 
             java.nio.file.Path targetDir = java.nio.file.Path.of(uploadDir).resolve("sessions").resolve(sid.toString());
@@ -78,12 +85,14 @@ public class SessionImageTools {
             sessionImageRepository.persist(image);
 
             return "/api/session-images/" + sid + "/" + fileName;
-        } catch (IllegalArgumentException e) {
-            Log.warn("上传 session 图片失败: " + e.getMessage());
-            throw new RuntimeException(e.getMessage());
         } catch (IOException e) {
             Log.warn("保存 session 图片失败: " + e.getMessage());
             throw new RuntimeException("保存文件失败: " + e.getMessage());
         }
+    }
+
+    private String sanitizeFilename(String filename) {
+        String base = java.nio.file.Path.of(filename).getFileName().toString();
+        return base.replaceAll("[^a-zA-Z0-9._-]", "_");
     }
 }
