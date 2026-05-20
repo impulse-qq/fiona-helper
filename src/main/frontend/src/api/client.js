@@ -50,5 +50,37 @@ export default {
       if (!res.ok) throw new Error(`${res.status}: ${await res.text()}`)
       return res.text()
     })
+  },
+
+  listPipelines() {
+    return request('/pipelines')
+  },
+
+  getPipeline(id) {
+    return request(`/pipelines/${id}`)
+  },
+
+  getPipelineSessions(id) {
+    return request(`/pipelines/${id}/sessions`)
+  },
+
+  getSession(id) {
+    return request(`/sessions/${id}`)
+  },
+
+  getSessionImages(id) {
+    return request(`/sessions/${id}/images`)
+  },
+
+  uploadSessionImage(id, file) {
+    const form = new FormData()
+    form.append('file', file)
+    return fetch(`${BASE}/sessions/${id}/images`, {
+      method: 'POST',
+      body: form
+    }).then(async res => {
+      if (!res.ok) throw new Error(`${res.status}: ${await res.text()}`)
+      return res.text()
+    })
   }
 }
