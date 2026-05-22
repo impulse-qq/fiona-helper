@@ -4,6 +4,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.nio.file.Path;
 import java.time.Instant;
 import java.util.UUID;
 
@@ -31,5 +32,10 @@ public class SessionImageEntity extends PanacheEntityBase {
     public SessionImageEntity(UUID sessionId, String imagePath) {
         this.sessionId = sessionId;
         this.imagePath = imagePath;
+    }
+
+    public String getImageUrl() {
+        String filename = Path.of(imagePath).getFileName().toString();
+        return "/api/session-images/" + sessionId + "/" + filename;
     }
 }

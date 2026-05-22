@@ -2,6 +2,7 @@ package io.promptforge.resource;
 
 import io.promptforge.entity.CharacterEntity;
 import io.promptforge.repository.CharacterRepository;
+import io.quarkus.logging.Log;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
@@ -60,7 +61,8 @@ public class ImageResource {
         if (character.avatarPath != null) {
             try {
                 Files.deleteIfExists(java.nio.file.Path.of(character.avatarPath));
-            } catch (IOException ignored) {
+            } catch (IOException e) {
+                Log.warn("删除旧头像失败: " + e.getMessage());
             }
         }
 

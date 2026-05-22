@@ -77,11 +77,8 @@ public class SessionResource {
 
         // Load images
         List<ImageItem> images = sessionImageRepository.findBySessionId(id).stream()
-                .map(img -> {
-                    String filename = java.nio.file.Path.of(img.imagePath).getFileName().toString();
-                    String url = "/api/session-images/" + id + "/" + filename;
-                    return new ImageItem(img.id, url);
-                }).toList();
+                .map(img -> new ImageItem(img.id, img.getImageUrl()))
+                .toList();
 
         SessionDetail detail = new SessionDetail(
                 session.id,
@@ -103,11 +100,8 @@ public class SessionResource {
     @Path("/{id}/images")
     public Response getImages(@PathParam("id") UUID id) {
         List<ImageItem> images = sessionImageRepository.findBySessionId(id).stream()
-                .map(img -> {
-                    String filename = java.nio.file.Path.of(img.imagePath).getFileName().toString();
-                    String url = "/api/session-images/" + id + "/" + filename;
-                    return new ImageItem(img.id, url);
-                }).toList();
+                .map(img -> new ImageItem(img.id, img.getImageUrl()))
+                .toList();
         return Response.ok(images).build();
     }
 
@@ -167,8 +161,7 @@ public class SessionResource {
         SessionImageEntity image = new SessionImageEntity(id, targetPath.toString());
         sessionImageRepository.persist(image);
 
-        String imageUrl = "/api/session-images/" + id + "/" + fileName;
-        return Response.ok(imageUrl).build();
+        return Response.ok(image.getImageUrl()).build();
     }
 
     private String sanitizeFilename(String filename) {
