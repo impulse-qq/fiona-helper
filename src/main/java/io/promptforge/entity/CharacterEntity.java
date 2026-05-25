@@ -26,6 +26,9 @@ public class CharacterEntity extends PanacheEntityBase {
     @Column(name = "personality", length = 512)
     public String personality;
 
+    @Column(name = "avatar_path", length = 512)
+    public String avatarPath;
+
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     public Instant createdAt;

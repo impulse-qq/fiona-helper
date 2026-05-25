@@ -127,6 +127,44 @@ quarkus.native.additional-build-args=-H:+ReportExceptionStackTraces
 quarkus.native.container-build=false
 ```
 
+## Web UI
+
+项目包含 Vue 3 + Vite 前端，用于可视化管理和浏览数据。
+
+### 启动方式
+
+```bash
+# 终端 1：后端
+./mvnw quarkus:dev
+
+# 终端 2：前端
+# (在项目根目录执行)
+cd src/main/frontend && npm run dev
+```
+
+前端访问 http://localhost:5173，API 自动代理到 Quarkus 8080。
+
+### 前端构建
+
+```bash
+cd src/main/frontend && npm run build
+./mvnw package
+java -jar target/quarkus-app/quarkus-run.jar
+```
+
+## 项目进度
+
+| Phase | 内容 | 状态 | 提交 |
+|-------|------|------|------|
+| M1 | Pipeline 内核 + MCP 步进式组装 | ✅ 完成 | `d84c0c7` |
+| M2 | slot_prompt 统一内容池 | ✅ 完成 | `ac7edb5` |
+| M3a | session 评分反馈 (submit_score / get_score) | ✅ 完成 | `37ecb33` |
+| Web UI P1 | 角色卡片 CRUD + 头像上传 | ✅ 完成 | `e714690` |
+| Web UI P2 | Pipeline 列表 / Slot 编辑 / SlotPrompt 复用 | 🔄 计划中 | — |
+| Web UI P3 | 评分列表 / 星标展示 / 评论视图 | 📋 待定 | — |
+| M3b | 多模型适配 (图像生成) | 📋 待定 | — |
+| M4 | 组件推荐 (基于评分数据) | 📋 待定 | — |
+
 ## MCP Server
 
 本项目以 **MCP Server** 模式运行，通过 HTTP 暴露 Tools 供外部 Agent 调用。

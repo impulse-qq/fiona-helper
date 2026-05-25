@@ -45,3 +45,11 @@ nb-configuration.xml
 /.quarkus/cli/plugins/
 # TLS Certificates
 .certs/
+
+# Frontend
+src/main/frontend/node_modules/
+src/main/frontend/dist/
+src/main/resources/META-INF/resources/
+
+# Uploads
+uploads/
