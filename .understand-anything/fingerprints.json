@@ -1,0 +1,4533 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "04f5f92278bd03a3e85243746528fed6a1f4318b",
+  "generatedAt": "2026-05-25T05:33:21.062Z",
+  "files": {
+    ".dockerignore": {
+      "filePath": ".dockerignore",
+      "contentHash": "39b0bd3b7287783b4c4a24b533ea13483f7b7c7f59d2b5d9eb7c3f0ca1786d35",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": false
+    },
+    ".github/workflows/maven-publish.yml": {
+      "filePath": ".github/workflows/maven-publish.yml",
+      "contentHash": "ffd44ca3825cb562efae325ddb636b3eda2437d0c767cc357d7a60793bddc780",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    ".mvn/wrapper/maven-wrapper.properties": {
+      "filePath": ".mvn/wrapper/maven-wrapper.properties",
+      "contentHash": "5dc1b208d0810f6c1299572a1dc23df58e6e0f651db9493f97967af987f5a1d2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": false
+    },
+    ".understand-anything/.understandignore": {
+      "filePath": ".understand-anything/.understandignore",
+      "contentHash": "7ae61fb678ba54cbf378799f955861591fb1bc207110706200e1ec1b8c7788ed",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 49,
+      "hasStructuralAnalysis": false
+    },
+    "CHANGELOG.md": {
+      "filePath": "CHANGELOG.md",
+      "contentHash": "fbd0ea41c5769d6cdea81e0efecccdbe76b7c166d593fb151fa9c8575378fae5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    "CLAUDE.md": {
+      "filePath": "CLAUDE.md",
+      "contentHash": "05f49dc1eae027af3476705f13b626e733a811f97a9dd8e1b110c60cc91d6571",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 126,
+      "hasStructuralAnalysis": true
+    },
+    "compile-native.sh": {
+      "filePath": "compile-native.sh",
+      "contentHash": "9e37e90613b505611226fc3ed103f8f90ae02e23b6362d730f67653a00dbc37e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 24,
+      "hasStructuralAnalysis": true
+    },
+    "docs/ARCHITECTURE.md": {
+      "filePath": "docs/ARCHITECTURE.md",
+      "contentHash": "c2bd3e33371686263e61149f57b40bb73793b2b380717a2f30cb7886e3c56f0d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 120,
+      "hasStructuralAnalysis": true
+    },
+    "docs/DEPLOYMENT.md": {
+      "filePath": "docs/DEPLOYMENT.md",
+      "contentHash": "ca6bf3433c565a1b552e6180c9e2691564d0e348cc963d5ecaa337bbb9a5ffb7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 165,
+      "hasStructuralAnalysis": true
+    },
+    "docs/design/web-ui-character-cards-design.md": {
+      "filePath": "docs/design/web-ui-character-cards-design.md",
+      "contentHash": "2b8d808c328af9cccdf2d715add9ab14e5a592398c3e6d30609848814f3fd05c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 433,
+      "hasStructuralAnalysis": true
+    },
+    "docs/MCP_API.md": {
+      "filePath": "docs/MCP_API.md",
+      "contentHash": "3e74e1863247ae3e817784cde7f5a05032a77a691b191972c044dbbeba7874c5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 375,
+      "hasStructuralAnalysis": true
+    },
+    "docs/superpowers/plans/2026-05-19-phase2-implementation-plan.md": {
+      "filePath": "docs/superpowers/plans/2026-05-19-phase2-implementation-plan.md",
+      "contentHash": "cd66a1cb939c4ac1a9c565fa1eb3c5ced056730a423787390e4a0b124218f935",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1784,
+      "hasStructuralAnalysis": true
+    },
+    "docs/superpowers/specs/2026-05-16-m3a-session-scoring-design.md": {
+      "filePath": "docs/superpowers/specs/2026-05-16-m3a-session-scoring-design.md",
+      "contentHash": "443904beeae3caea82ed7b5d4ac55e42dac68e8f7eb6ca2cda6f0c4f1929a85a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 453,
+      "hasStructuralAnalysis": true
+    },
+    "docs/superpowers/specs/2026-05-16-pipeline-assembler-service-design.md": {
+      "filePath": "docs/superpowers/specs/2026-05-16-pipeline-assembler-service-design.md",
+      "contentHash": "cd93bbd1d8538e61b2271a03f75777b1e5b99c75275d5ed01de48089c4d3c179",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 559,
+      "hasStructuralAnalysis": true
+    },
+    "docs/superpowers/specs/2026-05-19-phase2-pipeline-session-browser-design.md": {
+      "filePath": "docs/superpowers/specs/2026-05-19-phase2-pipeline-session-browser-design.md",
+      "contentHash": "14bdef80cdbaec085253d4b5ce1db1af7d0399144f14355c1532466d2db8014d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 259,
+      "hasStructuralAnalysis": true
+    },
+    "mvnw": {
+      "filePath": "mvnw",
+      "contentHash": "cae96cef89ebea3531221f4ae17c23cf8edf67d00eae8306d4186ae1bbed4d02",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 296,
+      "hasStructuralAnalysis": false
+    },
+    "mvnw.cmd": {
+      "filePath": "mvnw.cmd",
+      "contentHash": "46eedb8419bd14fe70d5bb2916d7b6f51806e51b39d5b76a42610384ca929c1c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 190,
+      "hasStructuralAnalysis": false
+    },
+    "pom.xml": {
+      "filePath": "pom.xml",
+      "contentHash": "f6b2873dc2dc739b9f97e48c9d3071972075e60b75b2dd492435147875b0df45",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 161,
+      "hasStructuralAnalysis": false
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "4d4f3d7aa34dc4e1189f6f5245aeadb578d9a52e260ff0f31afd8647aa01b6ed",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 212,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/docker/Dockerfile.jvm": {
+      "filePath": "src/main/docker/Dockerfile.jvm",
+      "contentHash": "25ed7248cfeb46295f59ec12e0573f99a11af9ece9d0b9dc47fb7eb72641be3d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 101,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/docker/Dockerfile.legacy-jar": {
+      "filePath": "src/main/docker/Dockerfile.legacy-jar",
+      "contentHash": "121aada55803fd82568cbee5791f58422cb5ead8a812d858852c7a081c4ca31c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 97,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/docker/Dockerfile.native": {
+      "filePath": "src/main/docker/Dockerfile.native",
+      "contentHash": "8c951f0d8d492d56620e7eab1e847b8250e6ae65b8f505c0ce0241b3adb2ea9b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 30,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/docker/Dockerfile.native-micro": {
+      "filePath": "src/main/docker/Dockerfile.native-micro",
+      "contentHash": "82571b18a649c7cdb4c14fca04c07028aa41211791bbfb03e95289dd3d8cf43a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/index.html": {
+      "filePath": "src/main/frontend/index.html",
+      "contentHash": "9519b4cf3aa26eb96c93f7978f5efae42518ce9ca3486508ac905e76a22e8005",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 22,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/package.json": {
+      "filePath": "src/main/frontend/package.json",
+      "contentHash": "149f323ad3d2321059920b627e66e827840eebc3b33a00baeb8c75308749b965",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/frontend/src/api/client.js": {
+      "filePath": "src/main/frontend/src/api/client.js",
+      "contentHash": "57a6350d553f12d83b3eb3866d5bcadcabf2d6c924a7de17eab3d739ecb05752",
+      "functions": [
+        {
+          "name": "request",
+          "params": [
+            "url"
+          ],
+          "exported": false,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 87,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/frontend/src/App.vue": {
+      "filePath": "src/main/frontend/src/App.vue",
+      "contentHash": "e6a5673c324901af6ecc95b8e447b39b37781149b933782a1ef437f6155a2f92",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 187,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/src/components/CharacterCard.vue": {
+      "filePath": "src/main/frontend/src/components/CharacterCard.vue",
+      "contentHash": "104ef966e8b51d2372ce36679ae5e9764ad0c5c2546252d77691c31b1abfc9a6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 92,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/src/components/CharacterForm.vue": {
+      "filePath": "src/main/frontend/src/components/CharacterForm.vue",
+      "contentHash": "94263c44d5bd968f933f21467cadb367c30ad3a564066aa4e4aa37a11d7a67cd",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 164,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/src/components/CharacterGrid.vue": {
+      "filePath": "src/main/frontend/src/components/CharacterGrid.vue",
+      "contentHash": "dedd3962cd44969ce4d59bae319b2ec1a99c25f2ab998e82d55fd4eb19b58f0e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 65,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/src/components/ImageUploader.vue": {
+      "filePath": "src/main/frontend/src/components/ImageUploader.vue",
+      "contentHash": "00e21b1a0ecdb3d92bd07fb8f98b080ab3ebd80b9109df76660a025c36b2a1ee",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 108,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/src/components/PipelineCard.vue": {
+      "filePath": "src/main/frontend/src/components/PipelineCard.vue",
+      "contentHash": "22e8bf19d0211393115bcb65cc1ca0facc718a97eefc7aab874c49c60909c5c2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 55,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/src/components/PipelineList.vue": {
+      "filePath": "src/main/frontend/src/components/PipelineList.vue",
+      "contentHash": "2a10dea01a76683c60076ab614b47ff74355d4700778d17f0efa9c63c215522c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 63,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/src/components/SessionCard.vue": {
+      "filePath": "src/main/frontend/src/components/SessionCard.vue",
+      "contentHash": "61dd8427f5faeb5b5d06b98950a5df817201efdaffa126aa33fb8feccf882b2f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 61,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/src/components/SessionDetail.vue": {
+      "filePath": "src/main/frontend/src/components/SessionDetail.vue",
+      "contentHash": "4d9e5d93e7650f45aae20479f5eeb0b85fa4be1ce7af69470d51ffa037091ec3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 80,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/src/components/SessionImageGallery.vue": {
+      "filePath": "src/main/frontend/src/components/SessionImageGallery.vue",
+      "contentHash": "28a744eb71b2de1486b632feb167f34e919b63a3df8e43e6e9a0939d88a12420",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 131,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/src/components/SessionList.vue": {
+      "filePath": "src/main/frontend/src/components/SessionList.vue",
+      "contentHash": "7b9d98c3dbec0187719b94db0942395862510c55949527277c6a4d3f08672e92",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 70,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/src/components/SlotPromptList.vue": {
+      "filePath": "src/main/frontend/src/components/SlotPromptList.vue",
+      "contentHash": "d4c19a90be1fca33d16c69de350a7bc527003435dff35170ce7b48df509b2ca2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 53,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/frontend/src/main.js": {
+      "filePath": "src/main/frontend/src/main.js",
+      "contentHash": "50cb9f18b1c7115799ae456f0d0038840278b49ea520b5549d468ec76c248fb9",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vue",
+          "specifiers": [
+            "createApp"
+          ]
+        },
+        {
+          "source": "./App.vue",
+          "specifiers": [
+            "App"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/frontend/vite.config.js": {
+      "filePath": "src/main/frontend/vite.config.js",
+      "contentHash": "f3d14a7753ed30d4871756b697d9091f85a476f6a0763573502186dacf28fe0d",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vite",
+          "specifiers": [
+            "defineConfig"
+          ]
+        },
+        {
+          "source": "@vitejs/plugin-vue",
+          "specifiers": [
+            "vue"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/AssembleResult.java": {
+      "filePath": "src/main/java/io/promptforge/dto/AssembleResult.java",
+      "contentHash": "2a157ab77e6d15272713a78c4705b65795153fa3c211cfa68f5337a07d14c3a2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/CharacterResponse.java": {
+      "filePath": "src/main/java/io/promptforge/dto/CharacterResponse.java",
+      "contentHash": "a1f47812c6669f923d63eeedda72d79fdc1b493bea958246df42901887256076",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/CharacterSettingResponse.java": {
+      "filePath": "src/main/java/io/promptforge/dto/CharacterSettingResponse.java",
+      "contentHash": "58c67993481fc3abe64bbd114157c6d5be3a99fe4975e2c89ab199f8737e0224",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/CompletedSlot.java": {
+      "filePath": "src/main/java/io/promptforge/dto/CompletedSlot.java",
+      "contentHash": "87597ccd9baf5e227be7b2913a6f4ac31110e41ea65dabe1761da3691c842b88",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/ImageItem.java": {
+      "filePath": "src/main/java/io/promptforge/dto/ImageItem.java",
+      "contentHash": "9170dedbf4e496269b7fa68e284d40d4398a52b613ae2ffe967e3a2dedc3843a",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/InsertResult.java": {
+      "filePath": "src/main/java/io/promptforge/dto/InsertResult.java",
+      "contentHash": "0bd71603d7847ebc22395de234273d65aba4cfa7c789c520bd4b6653b455452e",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.SessionStatus",
+          "specifiers": [
+            "SessionStatus"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/NextStep.java": {
+      "filePath": "src/main/java/io/promptforge/dto/NextStep.java",
+      "contentHash": "aec7f9ad9554aa77881f68d3e3c8197fdfa9041cc14e27bbb919d67563fe950a",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/PipelineDetail.java": {
+      "filePath": "src/main/java/io/promptforge/dto/PipelineDetail.java",
+      "contentHash": "57e388f6c0cee61f4a663d711bfad835dab7db2448badddc34f4c37640e130b8",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/PipelineSummary.java": {
+      "filePath": "src/main/java/io/promptforge/dto/PipelineSummary.java",
+      "contentHash": "12150da505c5e1b6db81c2d3b88ecf3f7e23add4458b88781de0baa1b0eb46bb",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/ProgressInfo.java": {
+      "filePath": "src/main/java/io/promptforge/dto/ProgressInfo.java",
+      "contentHash": "6b65679db8415485cc5e5c2a3c77a4a7740b8f52958802207ce9d7c5111a0ac7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/ScoreItem.java": {
+      "filePath": "src/main/java/io/promptforge/dto/ScoreItem.java",
+      "contentHash": "00d4a689e5421f671b493b180710bba012debff146fa56042c3d894bd2147862",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "java.time.Instant",
+          "specifiers": [
+            "Instant"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/ScoreResponse.java": {
+      "filePath": "src/main/java/io/promptforge/dto/ScoreResponse.java",
+      "contentHash": "57f496a27b238aaddfe8524d8149cbff73f257eb6160e2eb2681486299ac24d1",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/ScoreSubmitResult.java": {
+      "filePath": "src/main/java/io/promptforge/dto/ScoreSubmitResult.java",
+      "contentHash": "991a810f82885f8144ac71eb743a7387ac001f98359f124f543079f6f62cb5fc",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/SessionDetail.java": {
+      "filePath": "src/main/java/io/promptforge/dto/SessionDetail.java",
+      "contentHash": "b9b207e239d4dd0ad75ce47619b6e2532fc3db41e6f5ba18399007e7eacd88e4",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.SessionStatus",
+          "specifiers": [
+            "SessionStatus"
+          ]
+        },
+        {
+          "source": "java.time.Instant",
+          "specifiers": [
+            "Instant"
+          ]
+        },
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 21,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/SessionResponse.java": {
+      "filePath": "src/main/java/io/promptforge/dto/SessionResponse.java",
+      "contentHash": "0bf34345538db94e923b3af3aefc4565416e7d5593e0992b3f30ad7637fb2c37",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.SessionStatus",
+          "specifiers": [
+            "SessionStatus"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/SessionSummary.java": {
+      "filePath": "src/main/java/io/promptforge/dto/SessionSummary.java",
+      "contentHash": "4a701c4a673668e42d70489f828092fa8bbe45383b949d68c62a536528c12f95",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.SessionStatus",
+          "specifiers": [
+            "SessionStatus"
+          ]
+        },
+        {
+          "source": "java.time.Instant",
+          "specifiers": [
+            "Instant"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/SlotInfo.java": {
+      "filePath": "src/main/java/io/promptforge/dto/SlotInfo.java",
+      "contentHash": "c5929ac0f407036a18298132dca29c30b5ee26e60749188a51cbf8199484c9fb",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.ConstraintType",
+          "specifiers": [
+            "ConstraintType"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/SlotPromptItem.java": {
+      "filePath": "src/main/java/io/promptforge/dto/SlotPromptItem.java",
+      "contentHash": "8fce954aa39cbe198576490c193753440e0f2df3dc3f9474bc520665867a9f28",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/SlotResponse.java": {
+      "filePath": "src/main/java/io/promptforge/dto/SlotResponse.java",
+      "contentHash": "b3d7d673e413cf1937b7b030aa525a0a30bdbe9e2d3f07ed8e32cd732fcdcd8e",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/dto/WorldSettingResponse.java": {
+      "filePath": "src/main/java/io/promptforge/dto/WorldSettingResponse.java",
+      "contentHash": "533da7b944241b9c8b83a7060f6ffa6e3d5e709802870e2c40e9c232a9130b4d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/entity/AssembleSessionEntity.java": {
+      "filePath": "src/main/java/io/promptforge/entity/AssembleSessionEntity.java",
+      "contentHash": "dfe0aa2793104d83d702497f4d1a207a716b45ba8475edd0ae659aba9af5b50f",
+      "functions": [
+        {
+          "name": "AssembleSessionEntity",
+          "params": [],
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "classes": [
+        {
+          "name": "AssembleSessionEntity",
+          "methods": [
+            "AssembleSessionEntity"
+          ],
+          "properties": [
+            "id",
+            "pipelineId",
+            "characterId",
+            "status",
+            "currentSlotIndex",
+            "createdAt",
+            "version"
+          ],
+          "exported": true,
+          "lineCount": 33
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheEntityBase",
+          "specifiers": [
+            "PanacheEntityBase"
+          ]
+        },
+        {
+          "source": "jakarta.persistence",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "org.hibernate.annotations.CreationTimestamp",
+          "specifiers": [
+            "CreationTimestamp"
+          ]
+        },
+        {
+          "source": "java.time.Instant",
+          "specifiers": [
+            "Instant"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "id",
+        "pipelineId",
+        "characterId",
+        "status",
+        "currentSlotIndex",
+        "createdAt",
+        "version",
+        "AssembleSessionEntity",
+        "AssembleSessionEntity"
+      ],
+      "totalLines": 43,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/entity/CharacterEntity.java": {
+      "filePath": "src/main/java/io/promptforge/entity/CharacterEntity.java",
+      "contentHash": "5ed6445a68d832557620e38503df013fa7343744a5cecedd7cf78e554a4b3125",
+      "functions": [
+        {
+          "name": "CharacterEntity",
+          "params": [],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "CharacterEntity",
+          "params": [
+            "name",
+            "baseDesign",
+            "personality"
+          ],
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [
+        {
+          "name": "CharacterEntity",
+          "methods": [
+            "CharacterEntity",
+            "CharacterEntity"
+          ],
+          "properties": [
+            "id",
+            "name",
+            "baseDesign",
+            "personality",
+            "avatarPath",
+            "createdAt",
+            "updatedAt"
+          ],
+          "exported": true,
+          "lineCount": 38
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheEntityBase",
+          "specifiers": [
+            "PanacheEntityBase"
+          ]
+        },
+        {
+          "source": "jakarta.persistence",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "org.hibernate.annotations.CreationTimestamp",
+          "specifiers": [
+            "CreationTimestamp"
+          ]
+        },
+        {
+          "source": "org.hibernate.annotations.UpdateTimestamp",
+          "specifiers": [
+            "UpdateTimestamp"
+          ]
+        },
+        {
+          "source": "java.time.Instant",
+          "specifiers": [
+            "Instant"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "id",
+        "name",
+        "baseDesign",
+        "personality",
+        "avatarPath",
+        "createdAt",
+        "updatedAt",
+        "CharacterEntity",
+        "CharacterEntity",
+        "CharacterEntity"
+      ],
+      "totalLines": 49,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/entity/ConstraintType.java": {
+      "filePath": "src/main/java/io/promptforge/entity/ConstraintType.java",
+      "contentHash": "43ff5e0c36b3ec1c0173970ac562bfbf5ac0ff5ce4ae8d53bb8836e3e5862555",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/entity/PipelineEntity.java": {
+      "filePath": "src/main/java/io/promptforge/entity/PipelineEntity.java",
+      "contentHash": "ed2f32edca041060895671e8f8e40ae59e8ea18561746c8b3beb1cb25c2ea9eb",
+      "functions": [
+        {
+          "name": "PipelineEntity",
+          "params": [],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "PipelineEntity",
+          "params": [
+            "name",
+            "description"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "addSlot",
+          "params": [
+            "slot"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "removeSlot",
+          "params": [
+            "slot"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [
+        {
+          "name": "PipelineEntity",
+          "methods": [
+            "PipelineEntity",
+            "PipelineEntity",
+            "addSlot",
+            "removeSlot"
+          ],
+          "properties": [
+            "id",
+            "name",
+            "description",
+            "isPublic",
+            "worldSetting",
+            "createdAt",
+            "updatedAt",
+            "slots"
+          ],
+          "exported": true,
+          "lineCount": 52
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheEntityBase",
+          "specifiers": [
+            "PanacheEntityBase"
+          ]
+        },
+        {
+          "source": "jakarta.persistence",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "org.hibernate.annotations.CreationTimestamp",
+          "specifiers": [
+            "CreationTimestamp"
+          ]
+        },
+        {
+          "source": "org.hibernate.annotations.UpdateTimestamp",
+          "specifiers": [
+            "UpdateTimestamp"
+          ]
+        },
+        {
+          "source": "java.time.Instant",
+          "specifiers": [
+            "Instant"
+          ]
+        },
+        {
+          "source": "java.util.ArrayList",
+          "specifiers": [
+            "ArrayList"
+          ]
+        },
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "id",
+        "name",
+        "description",
+        "isPublic",
+        "worldSetting",
+        "createdAt",
+        "updatedAt",
+        "slots",
+        "PipelineEntity",
+        "PipelineEntity",
+        "addSlot",
+        "removeSlot",
+        "PipelineEntity"
+      ],
+      "totalLines": 65,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/entity/SessionImageEntity.java": {
+      "filePath": "src/main/java/io/promptforge/entity/SessionImageEntity.java",
+      "contentHash": "0f422b488852d9d15e160fef8d075dacbde417e0257b4d36d2d9eeb75d890565",
+      "functions": [
+        {
+          "name": "SessionImageEntity",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "SessionImageEntity",
+          "params": [
+            "sessionId",
+            "imagePath"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "getImageUrl",
+          "params": [],
+          "returnType": "String",
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [
+        {
+          "name": "SessionImageEntity",
+          "methods": [
+            "SessionImageEntity",
+            "SessionImageEntity",
+            "getImageUrl"
+          ],
+          "properties": [
+            "id",
+            "sessionId",
+            "imagePath",
+            "createdAt"
+          ],
+          "exported": true,
+          "lineCount": 31
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheEntityBase",
+          "specifiers": [
+            "PanacheEntityBase"
+          ]
+        },
+        {
+          "source": "jakarta.persistence",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "org.hibernate.annotations.CreationTimestamp",
+          "specifiers": [
+            "CreationTimestamp"
+          ]
+        },
+        {
+          "source": "java.nio.file.Path",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "java.time.Instant",
+          "specifiers": [
+            "Instant"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "id",
+        "sessionId",
+        "imagePath",
+        "createdAt",
+        "SessionImageEntity",
+        "SessionImageEntity",
+        "getImageUrl",
+        "SessionImageEntity"
+      ],
+      "totalLines": 42,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/entity/SessionScoreEntity.java": {
+      "filePath": "src/main/java/io/promptforge/entity/SessionScoreEntity.java",
+      "contentHash": "a54810d9daf8ef34668cf98570b09348a59dc101886a6ecc7f860d01637221ef",
+      "functions": [
+        {
+          "name": "SessionScoreEntity",
+          "params": [],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "SessionScoreEntity",
+          "params": [
+            "sessionId",
+            "overallScore",
+            "comment",
+            "createdBy"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [
+        {
+          "name": "SessionScoreEntity",
+          "methods": [
+            "SessionScoreEntity",
+            "SessionScoreEntity"
+          ],
+          "properties": [
+            "id",
+            "sessionId",
+            "overallScore",
+            "comment",
+            "createdBy",
+            "createdAt",
+            "updatedAt"
+          ],
+          "exported": true,
+          "lineCount": 43
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheEntityBase",
+          "specifiers": [
+            "PanacheEntityBase"
+          ]
+        },
+        {
+          "source": "jakarta.persistence",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "org.hibernate.annotations.CreationTimestamp",
+          "specifiers": [
+            "CreationTimestamp"
+          ]
+        },
+        {
+          "source": "org.hibernate.annotations.UpdateTimestamp",
+          "specifiers": [
+            "UpdateTimestamp"
+          ]
+        },
+        {
+          "source": "java.time.Instant",
+          "specifiers": [
+            "Instant"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "id",
+        "sessionId",
+        "overallScore",
+        "comment",
+        "createdBy",
+        "createdAt",
+        "updatedAt",
+        "SessionScoreEntity",
+        "SessionScoreEntity",
+        "SessionScoreEntity"
+      ],
+      "totalLines": 60,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/entity/SessionStatus.java": {
+      "filePath": "src/main/java/io/promptforge/entity/SessionStatus.java",
+      "contentHash": "3552a0bea85164f3cfbf5495e9438246478232f2273966232d47a2a81de4f185",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/entity/SlotEntity.java": {
+      "filePath": "src/main/java/io/promptforge/entity/SlotEntity.java",
+      "contentHash": "61dd7da91066a151220da64bfb904f9a942f0473ebcbd939acdd2c477592c040",
+      "functions": [
+        {
+          "name": "SlotEntity",
+          "params": [],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "SlotEntity",
+          "params": [
+            "name",
+            "orderIndex",
+            "constraintType"
+          ],
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [
+        {
+          "name": "SlotEntity",
+          "methods": [
+            "SlotEntity",
+            "SlotEntity"
+          ],
+          "properties": [
+            "id",
+            "pipeline",
+            "name",
+            "orderIndex",
+            "constraintType",
+            "description",
+            "wordLimit",
+            "createdAt"
+          ],
+          "exported": true,
+          "lineCount": 44
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheEntityBase",
+          "specifiers": [
+            "PanacheEntityBase"
+          ]
+        },
+        {
+          "source": "jakarta.persistence",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "org.hibernate.annotations.CreationTimestamp",
+          "specifiers": [
+            "CreationTimestamp"
+          ]
+        },
+        {
+          "source": "java.time.Instant",
+          "specifiers": [
+            "Instant"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "id",
+        "pipeline",
+        "name",
+        "orderIndex",
+        "constraintType",
+        "description",
+        "wordLimit",
+        "createdAt",
+        "SlotEntity",
+        "SlotEntity",
+        "SlotEntity"
+      ],
+      "totalLines": 54,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/entity/SlotPromptEntity.java": {
+      "filePath": "src/main/java/io/promptforge/entity/SlotPromptEntity.java",
+      "contentHash": "987dd18ce35d624a3d9b664e71d839205f49eda8e0713184d68adcb2fc7f6b07",
+      "functions": [
+        {
+          "name": "SlotPromptEntity",
+          "params": [],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "SlotPromptEntity",
+          "params": [
+            "slotId",
+            "characterId",
+            "sessionId",
+            "content",
+            "createdBy"
+          ],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [
+        {
+          "name": "SlotPromptEntity",
+          "methods": [
+            "SlotPromptEntity",
+            "SlotPromptEntity"
+          ],
+          "properties": [
+            "id",
+            "slotId",
+            "characterId",
+            "sessionId",
+            "content",
+            "createdAt",
+            "createdBy"
+          ],
+          "exported": true,
+          "lineCount": 39
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheEntityBase",
+          "specifiers": [
+            "PanacheEntityBase"
+          ]
+        },
+        {
+          "source": "jakarta.persistence",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "org.hibernate.annotations.CreationTimestamp",
+          "specifiers": [
+            "CreationTimestamp"
+          ]
+        },
+        {
+          "source": "java.time.Instant",
+          "specifiers": [
+            "Instant"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "id",
+        "slotId",
+        "characterId",
+        "sessionId",
+        "content",
+        "createdAt",
+        "createdBy",
+        "SlotPromptEntity",
+        "SlotPromptEntity",
+        "SlotPromptEntity"
+      ],
+      "totalLines": 55,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/repository/AssembleSessionRepository.java": {
+      "filePath": "src/main/java/io/promptforge/repository/AssembleSessionRepository.java",
+      "contentHash": "13a03548f811809ba90fb1f310eb1d108b175fb2d62ecd29a3dab4d30b9a2d30",
+      "functions": [
+        {
+          "name": "findByIdOptional",
+          "params": [
+            "id"
+          ],
+          "returnType": "Optional<AssembleSessionEntity>",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [
+        {
+          "name": "AssembleSessionRepository",
+          "methods": [
+            "findByIdOptional"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.AssembleSessionEntity",
+          "specifiers": [
+            "AssembleSessionEntity"
+          ]
+        },
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheRepository",
+          "specifiers": [
+            "PanacheRepository"
+          ]
+        },
+        {
+          "source": "jakarta.enterprise.context.ApplicationScoped",
+          "specifiers": [
+            "ApplicationScoped"
+          ]
+        },
+        {
+          "source": "java.util.Optional",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "findByIdOptional",
+        "AssembleSessionRepository"
+      ],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/repository/CharacterRepository.java": {
+      "filePath": "src/main/java/io/promptforge/repository/CharacterRepository.java",
+      "contentHash": "737a1f9c9e22aea3ac39d91636c2950f9392d8d0b0eeba2a8790ee604ce80a86",
+      "functions": [
+        {
+          "name": "findByIdOptional",
+          "params": [
+            "id"
+          ],
+          "returnType": "Optional<CharacterEntity>",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [
+        {
+          "name": "CharacterRepository",
+          "methods": [
+            "findByIdOptional"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.CharacterEntity",
+          "specifiers": [
+            "CharacterEntity"
+          ]
+        },
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheRepository",
+          "specifiers": [
+            "PanacheRepository"
+          ]
+        },
+        {
+          "source": "jakarta.enterprise.context.ApplicationScoped",
+          "specifiers": [
+            "ApplicationScoped"
+          ]
+        },
+        {
+          "source": "java.util.Optional",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "findByIdOptional",
+        "CharacterRepository"
+      ],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/repository/PipelineRepository.java": {
+      "filePath": "src/main/java/io/promptforge/repository/PipelineRepository.java",
+      "contentHash": "837bff2122ee5920b29ab6c5deea527530c08016491e127c4305eae5ea42e77a",
+      "functions": [
+        {
+          "name": "findByIdOptional",
+          "params": [
+            "id"
+          ],
+          "returnType": "Optional<PipelineEntity>",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "listAllOrdered",
+          "params": [],
+          "returnType": "List<PipelineEntity>",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [
+        {
+          "name": "PipelineRepository",
+          "methods": [
+            "findByIdOptional",
+            "listAllOrdered"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.PipelineEntity",
+          "specifiers": [
+            "PipelineEntity"
+          ]
+        },
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheRepository",
+          "specifiers": [
+            "PanacheRepository"
+          ]
+        },
+        {
+          "source": "jakarta.enterprise.context.ApplicationScoped",
+          "specifiers": [
+            "ApplicationScoped"
+          ]
+        },
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.Optional",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "findByIdOptional",
+        "listAllOrdered",
+        "PipelineRepository"
+      ],
+      "totalLines": 22,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/repository/SessionImageRepository.java": {
+      "filePath": "src/main/java/io/promptforge/repository/SessionImageRepository.java",
+      "contentHash": "d216ed65daf3bf6481ff1fec05831d9d066d8899efbc0c5f8d15170824f1c485",
+      "functions": [
+        {
+          "name": "findBySessionId",
+          "params": [
+            "sessionId"
+          ],
+          "returnType": "List<SessionImageEntity>",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [
+        {
+          "name": "SessionImageRepository",
+          "methods": [
+            "findBySessionId"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.SessionImageEntity",
+          "specifiers": [
+            "SessionImageEntity"
+          ]
+        },
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheRepository",
+          "specifiers": [
+            "PanacheRepository"
+          ]
+        },
+        {
+          "source": "jakarta.enterprise.context.ApplicationScoped",
+          "specifiers": [
+            "ApplicationScoped"
+          ]
+        },
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "findBySessionId",
+        "SessionImageRepository"
+      ],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/repository/SessionScoreRepository.java": {
+      "filePath": "src/main/java/io/promptforge/repository/SessionScoreRepository.java",
+      "contentHash": "bd9b39b786ee5f11b35ecb07c47e29f916a7039afeee6859726532e537abeabb",
+      "functions": [
+        {
+          "name": "findBySessionIdAndCreatedBy",
+          "params": [
+            "sessionId",
+            "createdBy"
+          ],
+          "returnType": "Optional<SessionScoreEntity>",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "findBySessionId",
+          "params": [
+            "sessionId"
+          ],
+          "returnType": "List<SessionScoreEntity>",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [
+        {
+          "name": "SessionScoreRepository",
+          "methods": [
+            "findBySessionIdAndCreatedBy",
+            "findBySessionId"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.SessionScoreEntity",
+          "specifiers": [
+            "SessionScoreEntity"
+          ]
+        },
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheRepository",
+          "specifiers": [
+            "PanacheRepository"
+          ]
+        },
+        {
+          "source": "jakarta.enterprise.context.ApplicationScoped",
+          "specifiers": [
+            "ApplicationScoped"
+          ]
+        },
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.Optional",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "findBySessionIdAndCreatedBy",
+        "findBySessionId",
+        "SessionScoreRepository"
+      ],
+      "totalLines": 24,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/repository/SlotPromptRepository.java": {
+      "filePath": "src/main/java/io/promptforge/repository/SlotPromptRepository.java",
+      "contentHash": "3bdf61be28411da93f8e9b28d6a7d9c95ce2777315efe04e0a99d6b05034118b",
+      "functions": [
+        {
+          "name": "findBySessionId",
+          "params": [
+            "sessionId"
+          ],
+          "returnType": "List<SlotPromptEntity>",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "findBySessionIdAndSlotId",
+          "params": [
+            "sessionId",
+            "slotId"
+          ],
+          "returnType": "Optional<SlotPromptEntity>",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "findPresetBySlotId",
+          "params": [
+            "slotId",
+            "characterId"
+          ],
+          "returnType": "Optional<SlotPromptEntity>",
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [
+        {
+          "name": "SlotPromptRepository",
+          "methods": [
+            "findBySessionId",
+            "findBySessionIdAndSlotId",
+            "findPresetBySlotId"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 30
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.SlotPromptEntity",
+          "specifiers": [
+            "SlotPromptEntity"
+          ]
+        },
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheRepository",
+          "specifiers": [
+            "PanacheRepository"
+          ]
+        },
+        {
+          "source": "jakarta.enterprise.context.ApplicationScoped",
+          "specifiers": [
+            "ApplicationScoped"
+          ]
+        },
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.Optional",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "findBySessionId",
+        "findBySessionIdAndSlotId",
+        "findPresetBySlotId",
+        "SlotPromptRepository"
+      ],
+      "totalLines": 41,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/repository/SlotRepository.java": {
+      "filePath": "src/main/java/io/promptforge/repository/SlotRepository.java",
+      "contentHash": "06529be66cc86314a825493e2cfeb666955d8451e7855af2c22d90917ca6581c",
+      "functions": [
+        {
+          "name": "findByPipelineId",
+          "params": [
+            "pipelineId"
+          ],
+          "returnType": "List<SlotEntity>",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [
+        {
+          "name": "SlotRepository",
+          "methods": [
+            "findByPipelineId"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.SlotEntity",
+          "specifiers": [
+            "SlotEntity"
+          ]
+        },
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheRepository",
+          "specifiers": [
+            "PanacheRepository"
+          ]
+        },
+        {
+          "source": "jakarta.enterprise.context.ApplicationScoped",
+          "specifiers": [
+            "ApplicationScoped"
+          ]
+        },
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "findByPipelineId",
+        "SlotRepository"
+      ],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/resource/CharacterResource.java": {
+      "filePath": "src/main/java/io/promptforge/resource/CharacterResource.java",
+      "contentHash": "53ac104b26ee6dcac2a4a09230a7446e10fcb3baf404a0644fc9fd593f5c71d1",
+      "functions": [
+        {
+          "name": "list",
+          "params": [],
+          "returnType": "List<CharacterResponse>",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "get",
+          "params": [
+            "id"
+          ],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "create",
+          "params": [
+            "request"
+          ],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "update",
+          "params": [
+            "id",
+            "request"
+          ],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "delete",
+          "params": [
+            "id"
+          ],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "validate",
+          "params": [
+            "request"
+          ],
+          "returnType": "Response",
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "toResponse",
+          "params": [
+            "entity"
+          ],
+          "returnType": "CharacterResponse",
+          "exported": false,
+          "lineCount": 16
+        }
+      ],
+      "classes": [
+        {
+          "name": "CharacterResource",
+          "methods": [
+            "list",
+            "get",
+            "create",
+            "update",
+            "delete",
+            "validate",
+            "toResponse"
+          ],
+          "properties": [
+            "characterRepository"
+          ],
+          "exported": true,
+          "lineCount": 101
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.dto.CharacterResponse",
+          "specifiers": [
+            "CharacterResponse"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.CharacterEntity",
+          "specifiers": [
+            "CharacterEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.CharacterRepository",
+          "specifiers": [
+            "CharacterRepository"
+          ]
+        },
+        {
+          "source": "jakarta.inject.Inject",
+          "specifiers": [
+            "Inject"
+          ]
+        },
+        {
+          "source": "jakarta.transaction.Transactional",
+          "specifiers": [
+            "Transactional"
+          ]
+        },
+        {
+          "source": "jakarta.ws.rs",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "jakarta.ws.rs.core.MediaType",
+          "specifiers": [
+            "MediaType"
+          ]
+        },
+        {
+          "source": "jakarta.ws.rs.core.Response",
+          "specifiers": [
+            "Response"
+          ]
+        },
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "list",
+        "get",
+        "create",
+        "update",
+        "delete",
+        "CharacterResource"
+      ],
+      "totalLines": 116,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/resource/ImageResource.java": {
+      "filePath": "src/main/java/io/promptforge/resource/ImageResource.java",
+      "contentHash": "304404a9137ed9a6cd2977b9aaf068733026333c9058b67ee378e7f043c9c360",
+      "functions": [
+        {
+          "name": "uploadAvatar",
+          "params": [
+            "id",
+            "fileUpload"
+          ],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 65
+        },
+        {
+          "name": "getImage",
+          "params": [
+            "characterId",
+            "filename"
+          ],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 30
+        },
+        {
+          "name": "sanitizeFilename",
+          "params": [
+            "filename"
+          ],
+          "returnType": "String",
+          "exported": false,
+          "lineCount": 4
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImageResource",
+          "methods": [
+            "uploadAvatar",
+            "getImage",
+            "sanitizeFilename"
+          ],
+          "properties": [
+            "characterRepository",
+            "uploadDir"
+          ],
+          "exported": true,
+          "lineCount": 111
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.CharacterEntity",
+          "specifiers": [
+            "CharacterEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.CharacterRepository",
+          "specifiers": [
+            "CharacterRepository"
+          ]
+        },
+        {
+          "source": "io.quarkus.logging.Log",
+          "specifiers": [
+            "Log"
+          ]
+        },
+        {
+          "source": "jakarta.inject.Inject",
+          "specifiers": [
+            "Inject"
+          ]
+        },
+        {
+          "source": "jakarta.transaction.Transactional",
+          "specifiers": [
+            "Transactional"
+          ]
+        },
+        {
+          "source": "jakarta.ws.rs",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "jakarta.ws.rs.core.MediaType",
+          "specifiers": [
+            "MediaType"
+          ]
+        },
+        {
+          "source": "jakarta.ws.rs.core.Response",
+          "specifiers": [
+            "Response"
+          ]
+        },
+        {
+          "source": "org.eclipse.microprofile.config.inject.ConfigProperty",
+          "specifiers": [
+            "ConfigProperty"
+          ]
+        },
+        {
+          "source": "org.jboss.resteasy.reactive.multipart.FileUpload",
+          "specifiers": [
+            "FileUpload"
+          ]
+        },
+        {
+          "source": "java.io.IOException",
+          "specifiers": [
+            "IOException"
+          ]
+        },
+        {
+          "source": "java.nio.file.Files",
+          "specifiers": [
+            "Files"
+          ]
+        },
+        {
+          "source": "java.nio.file.StandardCopyOption",
+          "specifiers": [
+            "StandardCopyOption"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "uploadAvatar",
+        "getImage",
+        "ImageResource"
+      ],
+      "totalLines": 130,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/resource/PipelineResource.java": {
+      "filePath": "src/main/java/io/promptforge/resource/PipelineResource.java",
+      "contentHash": "6538f42eebe5bdbba9f40cadb89cf32187ac5ce7c77be401c772dd157f059c7b",
+      "functions": [
+        {
+          "name": "list",
+          "params": [],
+          "returnType": "List<PipelineSummary>",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "get",
+          "params": [
+            "id"
+          ],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "getSessions",
+          "params": [
+            "id"
+          ],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 36
+        },
+        {
+          "name": "toSessionSummary",
+          "params": [
+            "session",
+            "characterNameById",
+            "imageCountBySession"
+          ],
+          "returnType": "SessionSummary",
+          "exported": false,
+          "lineCount": 18
+        }
+      ],
+      "classes": [
+        {
+          "name": "PipelineResource",
+          "methods": [
+            "list",
+            "get",
+            "getSessions",
+            "toSessionSummary"
+          ],
+          "properties": [
+            "pipelineService",
+            "sessionRepository",
+            "characterRepository",
+            "sessionImageRepository"
+          ],
+          "exported": true,
+          "lineCount": 88
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.dto",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "io.promptforge.service.PipelineAssemblerService",
+          "specifiers": [
+            "PipelineAssemblerService"
+          ]
+        },
+        {
+          "source": "jakarta.inject.Inject",
+          "specifiers": [
+            "Inject"
+          ]
+        },
+        {
+          "source": "jakarta.ws.rs",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "jakarta.ws.rs.core.MediaType",
+          "specifiers": [
+            "MediaType"
+          ]
+        },
+        {
+          "source": "jakarta.ws.rs.core.Response",
+          "specifiers": [
+            "Response"
+          ]
+        },
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.Map",
+          "specifiers": [
+            "Map"
+          ]
+        },
+        {
+          "source": "java.util.Objects",
+          "specifiers": [
+            "Objects"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        },
+        {
+          "source": "java.util.stream.Collectors",
+          "specifiers": [
+            "Collectors"
+          ]
+        }
+      ],
+      "exports": [
+        "list",
+        "get",
+        "getSessions",
+        "PipelineResource"
+      ],
+      "totalLines": 106,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/resource/SessionImageResource.java": {
+      "filePath": "src/main/java/io/promptforge/resource/SessionImageResource.java",
+      "contentHash": "c5dc89cc438bc3de6a17f8fe78e4015484406ca8e8659417c859ab05271a94d4",
+      "functions": [
+        {
+          "name": "getImage",
+          "params": [
+            "sessionId",
+            "filename"
+          ],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 30
+        }
+      ],
+      "classes": [
+        {
+          "name": "SessionImageResource",
+          "methods": [
+            "getImage"
+          ],
+          "properties": [
+            "uploadDir"
+          ],
+          "exported": true,
+          "lineCount": 37
+        }
+      ],
+      "imports": [
+        {
+          "source": "jakarta.ws.rs",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "jakarta.ws.rs.core.Response",
+          "specifiers": [
+            "Response"
+          ]
+        },
+        {
+          "source": "org.eclipse.microprofile.config.inject.ConfigProperty",
+          "specifiers": [
+            "ConfigProperty"
+          ]
+        },
+        {
+          "source": "java.io.IOException",
+          "specifiers": [
+            "IOException"
+          ]
+        },
+        {
+          "source": "java.nio.file.Files",
+          "specifiers": [
+            "Files"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "getImage",
+        "SessionImageResource"
+      ],
+      "totalLines": 48,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/resource/SessionResource.java": {
+      "filePath": "src/main/java/io/promptforge/resource/SessionResource.java",
+      "contentHash": "73eb828dad516d421d307cb5d820fd7c24233c061a27cb502e9b46df458945d9",
+      "functions": [
+        {
+          "name": "get",
+          "params": [
+            "id"
+          ],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 53
+        },
+        {
+          "name": "getImages",
+          "params": [
+            "id"
+          ],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "uploadImage",
+          "params": [
+            "id",
+            "fileUpload"
+          ],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 58
+        },
+        {
+          "name": "sanitizeFilename",
+          "params": [
+            "filename"
+          ],
+          "returnType": "String",
+          "exported": false,
+          "lineCount": 4
+        }
+      ],
+      "classes": [
+        {
+          "name": "SessionResource",
+          "methods": [
+            "get",
+            "getImages",
+            "uploadImage",
+            "sanitizeFilename"
+          ],
+          "properties": [
+            "sessionRepository",
+            "pipelineRepository",
+            "slotRepository",
+            "slotPromptRepository",
+            "characterRepository",
+            "sessionImageRepository",
+            "uploadDir"
+          ],
+          "exported": true,
+          "lineCount": 152
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.dto",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "jakarta.inject.Inject",
+          "specifiers": [
+            "Inject"
+          ]
+        },
+        {
+          "source": "jakarta.transaction.Transactional",
+          "specifiers": [
+            "Transactional"
+          ]
+        },
+        {
+          "source": "jakarta.ws.rs",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "jakarta.ws.rs.core.MediaType",
+          "specifiers": [
+            "MediaType"
+          ]
+        },
+        {
+          "source": "jakarta.ws.rs.core.Response",
+          "specifiers": [
+            "Response"
+          ]
+        },
+        {
+          "source": "org.eclipse.microprofile.config.inject.ConfigProperty",
+          "specifiers": [
+            "ConfigProperty"
+          ]
+        },
+        {
+          "source": "org.jboss.resteasy.reactive.multipart.FileUpload",
+          "specifiers": [
+            "FileUpload"
+          ]
+        },
+        {
+          "source": "java.io.IOException",
+          "specifiers": [
+            "IOException"
+          ]
+        },
+        {
+          "source": "java.nio.file.Files",
+          "specifiers": [
+            "Files"
+          ]
+        },
+        {
+          "source": "java.nio.file.StandardCopyOption",
+          "specifiers": [
+            "StandardCopyOption"
+          ]
+        },
+        {
+          "source": "java.util",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "java.util.stream.Collectors",
+          "specifiers": [
+            "Collectors"
+          ]
+        }
+      ],
+      "exports": [
+        "get",
+        "getImages",
+        "uploadImage",
+        "SessionResource"
+      ],
+      "totalLines": 172,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/service/PipelineAssemblerService.java": {
+      "filePath": "src/main/java/io/promptforge/service/PipelineAssemblerService.java",
+      "contentHash": "626805e89d9dcdb12455079273fd9ea46b1af5c55c08e6538fa98dd7132cdfed",
+      "functions": [
+        {
+          "name": "createSession",
+          "params": [
+            "pipelineId",
+            "characterId"
+          ],
+          "returnType": "SessionResponse",
+          "exported": true,
+          "lineCount": 68
+        },
+        {
+          "name": "getWorldSetting",
+          "params": [
+            "sessionId"
+          ],
+          "returnType": "WorldSettingResponse",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "getCharacterSetting",
+          "params": [
+            "sessionId"
+          ],
+          "returnType": "CharacterSettingResponse",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "getSlot",
+          "params": [
+            "sessionId",
+            "slotId"
+          ],
+          "returnType": "SlotResponse",
+          "exported": true,
+          "lineCount": 45
+        },
+        {
+          "name": "insertSlotValue",
+          "params": [
+            "sessionId",
+            "slotId",
+            "value",
+            "worldSetting"
+          ],
+          "returnType": "InsertResult",
+          "exported": true,
+          "lineCount": 85
+        },
+        {
+          "name": "assemblePrompt",
+          "params": [
+            "sessionId"
+          ],
+          "returnType": "AssembleResult",
+          "exported": true,
+          "lineCount": 40
+        },
+        {
+          "name": "persistPresetForFixedSlot",
+          "params": [
+            "slot",
+            "session"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "logLatency",
+          "params": [
+            "op",
+            "startNanos",
+            "sessionId",
+            "extra"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "toSlotInfo",
+          "params": [
+            "slot"
+          ],
+          "returnType": "SlotInfo",
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "listPipelines",
+          "params": [
+            "limit",
+            "offset"
+          ],
+          "returnType": "List<PipelineSummary>",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "getPipelineDetail",
+          "params": [
+            "pipelineId"
+          ],
+          "returnType": "PipelineDetail",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "toNextStep",
+          "params": [
+            "slot"
+          ],
+          "returnType": "NextStep",
+          "exported": false,
+          "lineCount": 3
+        }
+      ],
+      "classes": [
+        {
+          "name": "PipelineAssemblerService",
+          "methods": [
+            "createSession",
+            "getWorldSetting",
+            "getCharacterSetting",
+            "getSlot",
+            "insertSlotValue",
+            "assemblePrompt",
+            "persistPresetForFixedSlot",
+            "logLatency",
+            "toSlotInfo",
+            "listPipelines",
+            "getPipelineDetail",
+            "toNextStep"
+          ],
+          "properties": [
+            "MAX_VALUE_LENGTH",
+            "pipelineRepository",
+            "slotRepository",
+            "characterRepository",
+            "sessionRepository",
+            "slotPromptRepository"
+          ],
+          "exported": true,
+          "lineCount": 332
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.dto",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "io.quarkus.logging.Log",
+          "specifiers": [
+            "Log"
+          ]
+        },
+        {
+          "source": "jakarta.enterprise.context.ApplicationScoped",
+          "specifiers": [
+            "ApplicationScoped"
+          ]
+        },
+        {
+          "source": "jakarta.inject.Inject",
+          "specifiers": [
+            "Inject"
+          ]
+        },
+        {
+          "source": "jakarta.transaction.Transactional",
+          "specifiers": [
+            "Transactional"
+          ]
+        },
+        {
+          "source": "java.util.ArrayList",
+          "specifiers": [
+            "ArrayList"
+          ]
+        },
+        {
+          "source": "java.util.HashMap",
+          "specifiers": [
+            "HashMap"
+          ]
+        },
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.Map",
+          "specifiers": [
+            "Map"
+          ]
+        },
+        {
+          "source": "java.util.Optional",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "createSession",
+        "getWorldSetting",
+        "getCharacterSetting",
+        "getSlot",
+        "insertSlotValue",
+        "assemblePrompt",
+        "listPipelines",
+        "getPipelineDetail",
+        "PipelineAssemblerService"
+      ],
+      "totalLines": 350,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/service/SessionScoringService.java": {
+      "filePath": "src/main/java/io/promptforge/service/SessionScoringService.java",
+      "contentHash": "ccfc5983f8a97e410cbd738184a6d4e6c99fbcbe5e7727866ebf0c8260860381",
+      "functions": [
+        {
+          "name": "submitScore",
+          "params": [
+            "sessionId",
+            "overallScore",
+            "comment",
+            "createdBy"
+          ],
+          "returnType": "ScoreSubmitResult",
+          "exported": true,
+          "lineCount": 37
+        },
+        {
+          "name": "getScore",
+          "params": [
+            "sessionId"
+          ],
+          "returnType": "ScoreResponse",
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [
+        {
+          "name": "SessionScoringService",
+          "methods": [
+            "submitScore",
+            "getScore"
+          ],
+          "properties": [
+            "scoreRepository",
+            "sessionRepository"
+          ],
+          "exported": true,
+          "lineCount": 63
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.dto.ScoreItem",
+          "specifiers": [
+            "ScoreItem"
+          ]
+        },
+        {
+          "source": "io.promptforge.dto.ScoreResponse",
+          "specifiers": [
+            "ScoreResponse"
+          ]
+        },
+        {
+          "source": "io.promptforge.dto.ScoreSubmitResult",
+          "specifiers": [
+            "ScoreSubmitResult"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.AssembleSessionEntity",
+          "specifiers": [
+            "AssembleSessionEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.SessionScoreEntity",
+          "specifiers": [
+            "SessionScoreEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.SessionStatus",
+          "specifiers": [
+            "SessionStatus"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.AssembleSessionRepository",
+          "specifiers": [
+            "AssembleSessionRepository"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.SessionScoreRepository",
+          "specifiers": [
+            "SessionScoreRepository"
+          ]
+        },
+        {
+          "source": "jakarta.enterprise.context.ApplicationScoped",
+          "specifiers": [
+            "ApplicationScoped"
+          ]
+        },
+        {
+          "source": "jakarta.inject.Inject",
+          "specifiers": [
+            "Inject"
+          ]
+        },
+        {
+          "source": "jakarta.transaction.Transactional",
+          "specifiers": [
+            "Transactional"
+          ]
+        },
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.Optional",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "submitScore",
+        "getScore",
+        "SessionScoringService"
+      ],
+      "totalLines": 96,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/tool/PipelineAssemblerTools.java": {
+      "filePath": "src/main/java/io/promptforge/tool/PipelineAssemblerTools.java",
+      "contentHash": "374f8fd5c3d9d028d2f93b83fe89a2005e0729c0dfc9f80327ef460fbb16f7ff",
+      "functions": [
+        {
+          "name": "createSession",
+          "params": [
+            "pipelineId",
+            "characterId"
+          ],
+          "returnType": "SessionResponse",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "getWorldSetting",
+          "params": [
+            "sessionId"
+          ],
+          "returnType": "WorldSettingResponse",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "getCharacterSetting",
+          "params": [
+            "sessionId"
+          ],
+          "returnType": "CharacterSettingResponse",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "getSlot",
+          "params": [
+            "sessionId",
+            "slotId"
+          ],
+          "returnType": "SlotResponse",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "insertSlotValue",
+          "params": [
+            "sessionId",
+            "slotId",
+            "value",
+            "worldSetting"
+          ],
+          "returnType": "InsertResult",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "assemblePrompt",
+          "params": [
+            "sessionId"
+          ],
+          "returnType": "AssembleResult",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "listPipelines",
+          "params": [
+            "limit",
+            "offset"
+          ],
+          "returnType": "java.util.List<io.promptforge.dto.PipelineSummary>",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "getPipeline",
+          "params": [
+            "pipelineId"
+          ],
+          "returnType": "io.promptforge.dto.PipelineDetail",
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [
+        {
+          "name": "PipelineAssemblerTools",
+          "methods": [
+            "createSession",
+            "getWorldSetting",
+            "getCharacterSetting",
+            "getSlot",
+            "insertSlotValue",
+            "assemblePrompt",
+            "listPipelines",
+            "getPipeline"
+          ],
+          "properties": [
+            "assemblerService"
+          ],
+          "exported": true,
+          "lineCount": 89
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.dto",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "io.promptforge.service.PipelineAssemblerService",
+          "specifiers": [
+            "PipelineAssemblerService"
+          ]
+        },
+        {
+          "source": "io.quarkus.logging.Log",
+          "specifiers": [
+            "Log"
+          ]
+        },
+        {
+          "source": "jakarta.inject.Inject",
+          "specifiers": [
+            "Inject"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "createSession",
+        "getWorldSetting",
+        "getCharacterSetting",
+        "getSlot",
+        "insertSlotValue",
+        "assemblePrompt",
+        "listPipelines",
+        "getPipeline",
+        "PipelineAssemblerTools"
+      ],
+      "totalLines": 99,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/tool/ScoringTools.java": {
+      "filePath": "src/main/java/io/promptforge/tool/ScoringTools.java",
+      "contentHash": "43e50c804aaaabda52813c592e7a8ae209cea2a10edab699cf61997bdec9d084",
+      "functions": [
+        {
+          "name": "submitScore",
+          "params": [
+            "sessionId",
+            "overallScore",
+            "comment",
+            "createdBy"
+          ],
+          "returnType": "ScoreSubmitResult",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "getScore",
+          "params": [
+            "sessionId"
+          ],
+          "returnType": "ScoreResponse",
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [
+        {
+          "name": "ScoringTools",
+          "methods": [
+            "submitScore",
+            "getScore"
+          ],
+          "properties": [
+            "scoringService"
+          ],
+          "exported": true,
+          "lineCount": 33
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.dto.ScoreResponse",
+          "specifiers": [
+            "ScoreResponse"
+          ]
+        },
+        {
+          "source": "io.promptforge.dto.ScoreSubmitResult",
+          "specifiers": [
+            "ScoreSubmitResult"
+          ]
+        },
+        {
+          "source": "io.promptforge.service.SessionScoringService",
+          "specifiers": [
+            "SessionScoringService"
+          ]
+        },
+        {
+          "source": "io.quarkus.logging.Log",
+          "specifiers": [
+            "Log"
+          ]
+        },
+        {
+          "source": "jakarta.inject.Inject",
+          "specifiers": [
+            "Inject"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "submitScore",
+        "getScore",
+        "ScoringTools"
+      ],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/java/io/promptforge/tool/SessionImageTools.java": {
+      "filePath": "src/main/java/io/promptforge/tool/SessionImageTools.java",
+      "contentHash": "d96c6351b3b8be20eb53e25da2e769f1248106e09cb402b9a27c95869e36a59e",
+      "functions": [
+        {
+          "name": "uploadSessionImage",
+          "params": [
+            "sessionId",
+            "imageFile"
+          ],
+          "returnType": "String",
+          "exported": true,
+          "lineCount": 60
+        },
+        {
+          "name": "sanitizeFilename",
+          "params": [
+            "filename"
+          ],
+          "returnType": "String",
+          "exported": false,
+          "lineCount": 4
+        }
+      ],
+      "classes": [
+        {
+          "name": "SessionImageTools",
+          "methods": [
+            "uploadSessionImage",
+            "sanitizeFilename"
+          ],
+          "properties": [
+            "sessionRepository",
+            "sessionImageRepository",
+            "uploadDir"
+          ],
+          "exported": true,
+          "lineCount": 78
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.AssembleSessionEntity",
+          "specifiers": [
+            "AssembleSessionEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.SessionImageEntity",
+          "specifiers": [
+            "SessionImageEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.SessionStatus",
+          "specifiers": [
+            "SessionStatus"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.AssembleSessionRepository",
+          "specifiers": [
+            "AssembleSessionRepository"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.SessionImageRepository",
+          "specifiers": [
+            "SessionImageRepository"
+          ]
+        },
+        {
+          "source": "io.quarkiverse.mcp.server.Tool",
+          "specifiers": [
+            "Tool"
+          ]
+        },
+        {
+          "source": "io.quarkus.logging.Log",
+          "specifiers": [
+            "Log"
+          ]
+        },
+        {
+          "source": "jakarta.enterprise.context.ApplicationScoped",
+          "specifiers": [
+            "ApplicationScoped"
+          ]
+        },
+        {
+          "source": "jakarta.inject.Inject",
+          "specifiers": [
+            "Inject"
+          ]
+        },
+        {
+          "source": "jakarta.transaction.Transactional",
+          "specifiers": [
+            "Transactional"
+          ]
+        },
+        {
+          "source": "org.eclipse.microprofile.config.inject.ConfigProperty",
+          "specifiers": [
+            "ConfigProperty"
+          ]
+        },
+        {
+          "source": "org.jboss.resteasy.reactive.multipart.FileUpload",
+          "specifiers": [
+            "FileUpload"
+          ]
+        },
+        {
+          "source": "java.io.IOException",
+          "specifiers": [
+            "IOException"
+          ]
+        },
+        {
+          "source": "java.nio.file.Files",
+          "specifiers": [
+            "Files"
+          ]
+        },
+        {
+          "source": "java.nio.file.StandardCopyOption",
+          "specifiers": [
+            "StandardCopyOption"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        "uploadSessionImage",
+        "SessionImageTools"
+      ],
+      "totalLines": 99,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/resources/application.properties": {
+      "filePath": "src/main/resources/application.properties",
+      "contentHash": "868135491a0328d93fdf610d9280284b42c60e04d5374273e1c94bed591c7ff4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 36,
+      "hasStructuralAnalysis": false
+    },
+    "src/main/resources/db/migration/V1__init.sql": {
+      "filePath": "src/main/resources/db/migration/V1__init.sql",
+      "contentHash": "07728305961d25f1d700b54b751512bbcdf65d791da254476c81db5625cfa7fd",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 26,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/resources/db/migration/V2__add_assemble_session_and_draft.sql": {
+      "filePath": "src/main/resources/db/migration/V2__add_assemble_session_and_draft.sql",
+      "contentHash": "02437843b31db7fa7ca4df68865957a02de578e5afaf037998db694fc0bcb332",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/resources/db/migration/V3__reduce_slot_draft_value_length.sql": {
+      "filePath": "src/main/resources/db/migration/V3__reduce_slot_draft_value_length.sql",
+      "contentHash": "23b4200fa346d738971a0943866c55c26729561c2c8ec46b16d4e59555de2673",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/resources/db/migration/V4__add_slot_prompt_and_drop_default_value.sql": {
+      "filePath": "src/main/resources/db/migration/V4__add_slot_prompt_and_drop_default_value.sql",
+      "contentHash": "f96e22edcc65d586f3676c5db38f36a5ea90d31af09b6f3c1035b2fbbf8d1939",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 32,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/resources/db/migration/V5__add_session_score.sql": {
+      "filePath": "src/main/resources/db/migration/V5__add_session_score.sql",
+      "contentHash": "f4a2905ac5a4cf4711a9b222622fc9e28e7f39f2253290f16938e6d3e39d0eaa",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/resources/db/migration/V6__add_character_avatar.sql": {
+      "filePath": "src/main/resources/db/migration/V6__add_character_avatar.sql",
+      "contentHash": "819a3e1ffd96210adc7766e2af5aa39b8319765fc22a605505a2f701ab4c323d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": true
+    },
+    "src/main/resources/db/migration/V7__add_session_image.sql": {
+      "filePath": "src/main/resources/db/migration/V7__add_session_image.sql",
+      "contentHash": "bffa65fc2093288fa9133305de4bf0f06d31de86a9c9a9d9853557da4c868e4d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "src/test/java/io/promptforge/service/PipelineAssemblerServiceTest.java": {
+      "filePath": "src/test/java/io/promptforge/service/PipelineAssemblerServiceTest.java",
+      "contentHash": "d7ca4e4e605da0ef748be670a9b3dd541814f7adf029f280fb66c49c9955a400",
+      "functions": [
+        {
+          "name": "setUp",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 25
+        },
+        {
+          "name": "slot",
+          "params": [
+            "name",
+            "order",
+            "type"
+          ],
+          "returnType": "SlotEntity",
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "sessionFor",
+          "params": [
+            "pipeId",
+            "idx",
+            "status"
+          ],
+          "returnType": "AssembleSessionEntity",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "preset",
+          "params": [
+            "slotId",
+            "content"
+          ],
+          "returnType": "SlotPromptEntity",
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [
+        {
+          "name": "PipelineAssemblerServiceTest",
+          "methods": [
+            "setUp",
+            "slot",
+            "sessionFor",
+            "preset"
+          ],
+          "properties": [
+            "pipelineRepository",
+            "slotRepository",
+            "characterRepository",
+            "sessionRepository",
+            "slotPromptRepository",
+            "service",
+            "pipelineId",
+            "pipeline"
+          ],
+          "exported": false,
+          "lineCount": 564
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.dto.AssembleResult",
+          "specifiers": [
+            "AssembleResult"
+          ]
+        },
+        {
+          "source": "io.promptforge.dto.CharacterSettingResponse",
+          "specifiers": [
+            "CharacterSettingResponse"
+          ]
+        },
+        {
+          "source": "io.promptforge.dto.InsertResult",
+          "specifiers": [
+            "InsertResult"
+          ]
+        },
+        {
+          "source": "io.promptforge.dto.PipelineDetail",
+          "specifiers": [
+            "PipelineDetail"
+          ]
+        },
+        {
+          "source": "io.promptforge.dto.PipelineSummary",
+          "specifiers": [
+            "PipelineSummary"
+          ]
+        },
+        {
+          "source": "io.promptforge.dto.SessionResponse",
+          "specifiers": [
+            "SessionResponse"
+          ]
+        },
+        {
+          "source": "io.promptforge.dto.SlotResponse",
+          "specifiers": [
+            "SlotResponse"
+          ]
+        },
+        {
+          "source": "io.promptforge.dto.WorldSettingResponse",
+          "specifiers": [
+            "WorldSettingResponse"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.AssembleSessionEntity",
+          "specifiers": [
+            "AssembleSessionEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.CharacterEntity",
+          "specifiers": [
+            "CharacterEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.ConstraintType",
+          "specifiers": [
+            "ConstraintType"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.PipelineEntity",
+          "specifiers": [
+            "PipelineEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.SessionStatus",
+          "specifiers": [
+            "SessionStatus"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.SlotEntity",
+          "specifiers": [
+            "SlotEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.SlotPromptEntity",
+          "specifiers": [
+            "SlotPromptEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.AssembleSessionRepository",
+          "specifiers": [
+            "AssembleSessionRepository"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.CharacterRepository",
+          "specifiers": [
+            "CharacterRepository"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.PipelineRepository",
+          "specifiers": [
+            "PipelineRepository"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.SlotPromptRepository",
+          "specifiers": [
+            "SlotPromptRepository"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.SlotRepository",
+          "specifiers": [
+            "SlotRepository"
+          ]
+        },
+        {
+          "source": "io.quarkus.hibernate.orm.panache.PanacheQuery",
+          "specifiers": [
+            "PanacheQuery"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.BeforeEach",
+          "specifiers": [
+            "BeforeEach"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.DisplayName",
+          "specifiers": [
+            "DisplayName"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.Nested",
+          "specifiers": [
+            "Nested"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.Test",
+          "specifiers": [
+            "Test"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.extension.ExtendWith",
+          "specifiers": [
+            "ExtendWith"
+          ]
+        },
+        {
+          "source": "org.mockito.InjectMocks",
+          "specifiers": [
+            "InjectMocks"
+          ]
+        },
+        {
+          "source": "org.mockito.Mock",
+          "specifiers": [
+            "Mock"
+          ]
+        },
+        {
+          "source": "org.mockito.junit.jupiter.MockitoExtension",
+          "specifiers": [
+            "MockitoExtension"
+          ]
+        },
+        {
+          "source": "org.mockito.junit.jupiter.MockitoSettings",
+          "specifiers": [
+            "MockitoSettings"
+          ]
+        },
+        {
+          "source": "org.mockito.quality.Strictness",
+          "specifiers": [
+            "Strictness"
+          ]
+        },
+        {
+          "source": "java.util.ArrayList",
+          "specifiers": [
+            "ArrayList"
+          ]
+        },
+        {
+          "source": "java.util.Collections",
+          "specifiers": [
+            "Collections"
+          ]
+        },
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.Optional",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        },
+        {
+          "source": "org.assertj.core.api.Assertions.assertThat",
+          "specifiers": [
+            "assertThat"
+          ]
+        },
+        {
+          "source": "org.assertj.core.api.Assertions.assertThatThrownBy",
+          "specifiers": [
+            "assertThatThrownBy"
+          ]
+        },
+        {
+          "source": "org.mockito.ArgumentMatchers.any",
+          "specifiers": [
+            "any"
+          ]
+        },
+        {
+          "source": "org.mockito.ArgumentMatchers.anyInt",
+          "specifiers": [
+            "anyInt"
+          ]
+        },
+        {
+          "source": "org.mockito.Mockito.doAnswer",
+          "specifiers": [
+            "doAnswer"
+          ]
+        },
+        {
+          "source": "org.mockito.Mockito.mock",
+          "specifiers": [
+            "mock"
+          ]
+        },
+        {
+          "source": "org.mockito.Mockito.times",
+          "specifiers": [
+            "times"
+          ]
+        },
+        {
+          "source": "org.mockito.Mockito.verify",
+          "specifiers": [
+            "verify"
+          ]
+        },
+        {
+          "source": "org.mockito.Mockito.when",
+          "specifiers": [
+            "when"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 615,
+      "hasStructuralAnalysis": true
+    },
+    "src/test/java/io/promptforge/service/SessionScoringServiceTest.java": {
+      "filePath": "src/test/java/io/promptforge/service/SessionScoringServiceTest.java",
+      "contentHash": "c3f94a0f30d9ac7f0a39c15b87f38ea013ad578063cbdecd214449c2865b42f7",
+      "functions": [
+        {
+          "name": "setUp",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "sessionWithStatus",
+          "params": [
+            "status"
+          ],
+          "returnType": "AssembleSessionEntity",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "submitScore_firstTime_success",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "submitScore_sameCreatedBy_updates",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 17
+        },
+        {
+          "name": "submitScore_differentCreatedBy_inserts",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "submitScore_overallScoreZero_rejects",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "submitScore_overallScoreSix_rejects",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "submitScore_overallScoreNull_rejects",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "submitScore_createdByNull_rejects",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "submitScore_createdByEmpty_rejects",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "submitScore_createdByBlank_rejects",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "submitScore_sessionNotFound_rejects",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "submitScore_sessionStatusCreated_rejects",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "submitScore_sessionStatusInProgress_rejects",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "getScore_emptyList_returnsNullAvg",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "getScore_singleScore_returnsExactAvg",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "getScore_multipleScores_returnsAvg",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 19
+        },
+        {
+          "name": "getScore_sessionNotFound_throws",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 8
+        }
+      ],
+      "classes": [
+        {
+          "name": "SessionScoringServiceTest",
+          "methods": [
+            "setUp",
+            "sessionWithStatus",
+            "submitScore_firstTime_success",
+            "submitScore_sameCreatedBy_updates",
+            "submitScore_differentCreatedBy_inserts",
+            "submitScore_overallScoreZero_rejects",
+            "submitScore_overallScoreSix_rejects",
+            "submitScore_overallScoreNull_rejects",
+            "submitScore_createdByNull_rejects",
+            "submitScore_createdByEmpty_rejects",
+            "submitScore_createdByBlank_rejects",
+            "submitScore_sessionNotFound_rejects",
+            "submitScore_sessionStatusCreated_rejects",
+            "submitScore_sessionStatusInProgress_rejects",
+            "getScore_emptyList_returnsNullAvg",
+            "getScore_singleScore_returnsExactAvg",
+            "getScore_multipleScores_returnsAvg",
+            "getScore_sessionNotFound_throws"
+          ],
+          "properties": [
+            "scoreRepository",
+            "sessionRepository",
+            "service",
+            "sessionId"
+          ],
+          "exported": false,
+          "lineCount": 243
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.dto.ScoreResponse",
+          "specifiers": [
+            "ScoreResponse"
+          ]
+        },
+        {
+          "source": "io.promptforge.dto.ScoreSubmitResult",
+          "specifiers": [
+            "ScoreSubmitResult"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.AssembleSessionEntity",
+          "specifiers": [
+            "AssembleSessionEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.SessionScoreEntity",
+          "specifiers": [
+            "SessionScoreEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.SessionStatus",
+          "specifiers": [
+            "SessionStatus"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.AssembleSessionRepository",
+          "specifiers": [
+            "AssembleSessionRepository"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.SessionScoreRepository",
+          "specifiers": [
+            "SessionScoreRepository"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.BeforeEach",
+          "specifiers": [
+            "BeforeEach"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.Test",
+          "specifiers": [
+            "Test"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.extension.ExtendWith",
+          "specifiers": [
+            "ExtendWith"
+          ]
+        },
+        {
+          "source": "org.mockito.InjectMocks",
+          "specifiers": [
+            "InjectMocks"
+          ]
+        },
+        {
+          "source": "org.mockito.Mock",
+          "specifiers": [
+            "Mock"
+          ]
+        },
+        {
+          "source": "org.mockito.junit.jupiter.MockitoExtension",
+          "specifiers": [
+            "MockitoExtension"
+          ]
+        },
+        {
+          "source": "org.mockito.junit.jupiter.MockitoSettings",
+          "specifiers": [
+            "MockitoSettings"
+          ]
+        },
+        {
+          "source": "org.mockito.quality.Strictness",
+          "specifiers": [
+            "Strictness"
+          ]
+        },
+        {
+          "source": "java.util.List",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "java.util.Optional",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        },
+        {
+          "source": "org.assertj.core.api.Assertions.assertThat",
+          "specifiers": [
+            "assertThat"
+          ]
+        },
+        {
+          "source": "org.assertj.core.api.Assertions.assertThatThrownBy",
+          "specifiers": [
+            "assertThatThrownBy"
+          ]
+        },
+        {
+          "source": "org.mockito.ArgumentMatchers.any",
+          "specifiers": [
+            "any"
+          ]
+        },
+        {
+          "source": "org.mockito.Mockito.doAnswer",
+          "specifiers": [
+            "doAnswer"
+          ]
+        },
+        {
+          "source": "org.mockito.Mockito.never",
+          "specifiers": [
+            "never"
+          ]
+        },
+        {
+          "source": "org.mockito.Mockito.verify",
+          "specifiers": [
+            "verify"
+          ]
+        },
+        {
+          "source": "org.mockito.Mockito.when",
+          "specifiers": [
+            "when"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 274,
+      "hasStructuralAnalysis": true
+    },
+    "src/test/java/io/promptforge/tool/ScoringToolsTest.java": {
+      "filePath": "src/test/java/io/promptforge/tool/ScoringToolsTest.java",
+      "contentHash": "6273d20453291d0325edcd359b9818e9bb9e583916bd5bd8a9cdc5426b2ef3ef",
+      "functions": [
+        {
+          "name": "submitScore_invalidUuid_throwsRuntimeException",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "getScore_invalidUuid_throwsRuntimeException",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [
+        {
+          "name": "ScoringToolsTest",
+          "methods": [
+            "submitScore_invalidUuid_throwsRuntimeException",
+            "getScore_invalidUuid_throwsRuntimeException"
+          ],
+          "properties": [
+            "scoringService",
+            "tools"
+          ],
+          "exported": false,
+          "lineCount": 22
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.service.SessionScoringService",
+          "specifiers": [
+            "SessionScoringService"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.Test",
+          "specifiers": [
+            "Test"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.extension.ExtendWith",
+          "specifiers": [
+            "ExtendWith"
+          ]
+        },
+        {
+          "source": "org.mockito.InjectMocks",
+          "specifiers": [
+            "InjectMocks"
+          ]
+        },
+        {
+          "source": "org.mockito.Mock",
+          "specifiers": [
+            "Mock"
+          ]
+        },
+        {
+          "source": "org.mockito.junit.jupiter.MockitoExtension",
+          "specifiers": [
+            "MockitoExtension"
+          ]
+        },
+        {
+          "source": "org.mockito.junit.jupiter.MockitoSettings",
+          "specifiers": [
+            "MockitoSettings"
+          ]
+        },
+        {
+          "source": "org.mockito.quality.Strictness",
+          "specifiers": [
+            "Strictness"
+          ]
+        },
+        {
+          "source": "org.assertj.core.api.Assertions.assertThatThrownBy",
+          "specifiers": [
+            "assertThatThrownBy"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 36,
+      "hasStructuralAnalysis": true
+    },
+    "src/test/java/io/promptforge/tool/SessionImageToolsTest.java": {
+      "filePath": "src/test/java/io/promptforge/tool/SessionImageToolsTest.java",
+      "contentHash": "355616b4b65b76060cb51747fce97adecf8eb320b32b6e45e0d849922ee17fab",
+      "functions": [
+        {
+          "name": "setUp",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "uploadSessionImage_invalidUuid_throwsRuntimeException",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "uploadSessionImage_sessionNotFound_throwsRuntimeException",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "uploadSessionImage_sessionNotCompleted_throwsRuntimeException",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "uploadSessionImage_success",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 23
+        },
+        {
+          "name": "uploadSessionImage_notImage_rejects",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 15
+        },
+        {
+          "name": "uploadSessionImage_emptyFile_rejects",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 18
+        }
+      ],
+      "classes": [
+        {
+          "name": "SessionImageToolsTest",
+          "methods": [
+            "setUp",
+            "uploadSessionImage_invalidUuid_throwsRuntimeException",
+            "uploadSessionImage_sessionNotFound_throwsRuntimeException",
+            "uploadSessionImage_sessionNotCompleted_throwsRuntimeException",
+            "uploadSessionImage_success",
+            "uploadSessionImage_notImage_rejects",
+            "uploadSessionImage_emptyFile_rejects"
+          ],
+          "properties": [
+            "sessionRepository",
+            "sessionImageRepository",
+            "fileUpload",
+            "tools",
+            "tempDir"
+          ],
+          "exported": false,
+          "lineCount": 114
+        }
+      ],
+      "imports": [
+        {
+          "source": "io.promptforge.entity.AssembleSessionEntity",
+          "specifiers": [
+            "AssembleSessionEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.SessionImageEntity",
+          "specifiers": [
+            "SessionImageEntity"
+          ]
+        },
+        {
+          "source": "io.promptforge.entity.SessionStatus",
+          "specifiers": [
+            "SessionStatus"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.AssembleSessionRepository",
+          "specifiers": [
+            "AssembleSessionRepository"
+          ]
+        },
+        {
+          "source": "io.promptforge.repository.SessionImageRepository",
+          "specifiers": [
+            "SessionImageRepository"
+          ]
+        },
+        {
+          "source": "org.jboss.resteasy.reactive.multipart.FileUpload",
+          "specifiers": [
+            "FileUpload"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.BeforeEach",
+          "specifiers": [
+            "BeforeEach"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.Test",
+          "specifiers": [
+            "Test"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.extension.ExtendWith",
+          "specifiers": [
+            "ExtendWith"
+          ]
+        },
+        {
+          "source": "org.junit.jupiter.api.io.TempDir",
+          "specifiers": [
+            "TempDir"
+          ]
+        },
+        {
+          "source": "org.mockito.ArgumentCaptor",
+          "specifiers": [
+            "ArgumentCaptor"
+          ]
+        },
+        {
+          "source": "org.mockito.InjectMocks",
+          "specifiers": [
+            "InjectMocks"
+          ]
+        },
+        {
+          "source": "org.mockito.Mock",
+          "specifiers": [
+            "Mock"
+          ]
+        },
+        {
+          "source": "org.mockito.junit.jupiter.MockitoExtension",
+          "specifiers": [
+            "MockitoExtension"
+          ]
+        },
+        {
+          "source": "java.lang.reflect.Field",
+          "specifiers": [
+            "Field"
+          ]
+        },
+        {
+          "source": "java.nio.file.Files",
+          "specifiers": [
+            "Files"
+          ]
+        },
+        {
+          "source": "java.nio.file.Path",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "java.util.Optional",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "java.util.UUID",
+          "specifiers": [
+            "UUID"
+          ]
+        },
+        {
+          "source": "org.assertj.core.api.Assertions.assertThat",
+          "specifiers": [
+            "assertThat"
+          ]
+        },
+        {
+          "source": "org.assertj.core.api.Assertions.assertThatThrownBy",
+          "specifiers": [
+            "assertThatThrownBy"
+          ]
+        },
+        {
+          "source": "org.mockito.ArgumentMatchers.any",
+          "specifiers": [
+            "any"
+          ]
+        },
+        {
+          "source": "org.mockito.Mockito",
+          "specifiers": [
+            "*"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 143,
+      "hasStructuralAnalysis": true
+    }
+  }
+}
