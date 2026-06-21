@@ -183,6 +183,7 @@ java -jar target/quarkus-app/quarkus-run.jar
 | `get_pipeline` | 获取 Pipeline 详情含所有 Slot 的有序定义 |
 | `submit_score` | (M3a) 对已完成 session 提交评分(1-5)；同 createdBy 重提交=覆盖 |
 | `get_score` | (M3a) 查询某 session 的所有评分 + 平均分 + 评分人数 |
+| `register_session_image` | 登记已完成 session 的图片文件名；文件上传通过 Web UI/REST 完成 |
 
 ### 组装流程
 

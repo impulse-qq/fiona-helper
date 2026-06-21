@@ -6,7 +6,7 @@ Phase 2 在 Phase 1（角色卡片 Web UI）基础上，新增 **Pipeline 产物
 
 核心体验：用户在 Web UI 中浏览 Pipeline → 查看该 Pipeline 的所有已完成 Session（产物）→ 点进 Session 查看完整的组装 Prompt 内容和绑定的图片。
 
-同时提供 MCP Tool，方便 AI Agent 将生成的图片直接上传到对应的 Session。
+同时提供 MCP Tool，方便 AI Agent 将生成图片的文件名登记到对应的 Session。图片文件本身通过 Web UI/REST 上传。
 
 ## 2. 背景与上下文
 
@@ -23,12 +23,12 @@ Phase 2 在 Phase 1（角色卡片 Web UI）基础上，新增 **Pipeline 产物
 | 看不到历史组装结果 | Pipeline 详情页展示所有 COMPLETED session |
 | 不知道某个 session 组装出了什么 prompt | Session 详情页按 slot 顺序展示完整组装内容 |
 | 生成的图片和 prompt 没有关联 | Session 图片上传，一张或多张图绑定到 session |
-| AI Agent 生成图片后无法自动归档 | MCP Tool `upload_session_image` 让 Agent 直接上传 |
+| AI Agent 生成图片后无法自动归档 | MCP Tool `register_session_image` 登记文件名；图片文件通过 Web UI/REST 上传 |
 
 ## 3. 设计目标
 
 - **三层浏览**：Pipeline 列表 → Session 列表 → Session 详情（Prompt + 图片）
-- **双通道上传**：Web UI 按钮上传 + MCP Tool 上传
+- **上传与登记分离**：Web UI/REST 负责上传图片文件，MCP Tool 负责登记已生成图片的文件名
 - **图片一对多**：一个 Session 可以绑定多张图片（同 prompt 不同图）
 - **只读为主**：Phase 2 不修改 Slot / Pipeline 定义，只浏览和上传图片
 
@@ -150,21 +150,24 @@ GET /api/session-images/{sessionId}/{filename} → image file
 
 ## 6. MCP Tool 设计
 
-### 6.1 `upload_session_image`
+### 6.1 `register_session_image`
 
 ```java
-@Tool(name = "upload_session_image",
-      description = "上传图片到已完成的 session。支持 Agent 将生成的图片归档到对应 session。")
-public String uploadSessionImage(String sessionId, FileUpload imageFile)
+@Tool(name = "register_session_image",
+      description = "登记图片文件名到已完成的 session。仅记录文件名，实际文件需单独上传。")
+public String registerSessionImage(String sessionId, String filename)
 ```
+
+**设计修正**：
+原设计设想 MCP Tool 直接接收 `FileUpload` 并保存文件；实践中 MCP tools 不适合承载文件上传，所以调整为“REST/UI 上传文件 + MCP 登记文件名”的折中方案。
 
 **校验**：
 - `sessionId` 是合法 UUID
 - session 存在且 `status == COMPLETED`
-- 文件类型为 `image/*`
-- 文件大小 ≤ 5MB
+- `filename` 不能为空
+- 文件名会被服务端清洗为安全文件名
 
-**行为**：同 REST 上传，保存到 `uploads/sessions/{sessionId}/{timestamp}_{filename}`，返回图片 URL。
+**行为**：创建 `session_image` 记录并返回图片 URL。该 Tool 只登记文件名，不上传文件；文件上传仍由 `POST /api/sessions/{id}/images` 或 Web UI 完成。
 
 ## 7. 前端组件设计
 
@@ -229,9 +232,10 @@ ${user.home}/.fiona-helper/uploads/
 ### 9.2 MCP Tool 测试
 
 - `SessionImageToolsTest`：
-  - `uploadSessionImage_success`
-  - `uploadSessionImage_invalidUuid_throws`
-  - `uploadSessionImage_sessionNotCompleted_rejects`
+  - `registerSessionImage_success`
+  - `registerSessionImage_invalidUuid_throws`
+  - `registerSessionImage_sessionNotCompleted_rejects`
+  - `registerSessionImage_emptyFilename_rejects`
 
 ## 10. 范围明确排除
 
@@ -251,7 +255,7 @@ ${user.home}/.fiona-helper/uploads/
 | 2 | SessionResource（SessionDetail + 图片上传） | 0.5d |
 | 3 | PipelineResource（列表 + sessions 子查询） | 0.25d |
 | 4 | SessionImageResource（图片服务） | 0.25d |
-| 5 | MCP Tool `upload_session_image` | 0.25d |
+| 5 | MCP Tool `register_session_image` | 0.25d |
 | 6 | 后端单元测试 | 0.5d |
 | 7 | Vue 前端：PipelineList + SessionList + SessionDetail | 0.5d |
 | 8 | 端到端验证 | 0.25d |

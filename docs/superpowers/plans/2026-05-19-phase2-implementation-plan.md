@@ -26,7 +26,7 @@
 | `PipelineResource.java` | REST: GET /api/pipelines, /pipelines/{id}, /pipelines/{id}/sessions |
 | `SessionResource.java` | REST: GET /api/sessions/{id}, /sessions/{id}/images; POST image upload |
 | `SessionImageResource.java` | REST: GET /api/session-images/{sessionId}/{filename} |
-| `SessionImageTools.java` | MCP Tool: upload_session_image |
+| `SessionImageTools.java` | MCP Tool: register_session_image |
 | `SessionResourceTest.java` | REST-assured tests for SessionResource |
 | `SessionImageToolsTest.java` | Mockito tests for MCP Tool |
 
@@ -666,6 +666,8 @@ public class SessionImageResource {
 
 - [ ] **Step 2: Write SessionImageTools**
 
+Design note: the original plan used an MCP `FileUpload`, but MCP tools are not a good fit for binary file upload. The current contract is REST/Web UI uploads the file, and MCP only registers the generated filename against a completed session.
+
 ```java
 package io.promptforge.tool;
 
@@ -679,12 +681,7 @@ import io.quarkus.logging.Log;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
-import org.jboss.resteasy.reactive.multipart.FileUpload;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 import java.util.UUID;
 
 @ApplicationScoped
@@ -696,13 +693,10 @@ public class SessionImageTools {
     @Inject
     SessionImageRepository sessionImageRepository;
 
-    @ConfigProperty(name = "app.upload.dir")
-    String uploadDir;
-
-    @Tool(name = "upload_session_image",
-          description = "上传图片到已完成的 session。将 AI 生成的图片归档到对应组装会话。")
+    @Tool(name = "register_session_image",
+          description = "登记图片文件名到已完成的 session。仅记录文件名，实际文件需单独上传。")
     @Transactional
-    public String uploadSessionImage(String sessionId, FileUpload imageFile) {
+    public String registerSessionImage(String sessionId, String filename) {
         try {
             UUID sid = UUID.fromString(sessionId);
             AssembleSessionEntity session = sessionRepository.findByIdOptional(sid).orElse(null);
@@ -710,49 +704,21 @@ public class SessionImageTools {
                 throw new RuntimeException("session 不存在");
             }
             if (session.status != SessionStatus.COMPLETED) {
-                throw new RuntimeException("session 未完成，不能上传图片");
+                throw new RuntimeException("session 未完成，不能登记图片");
             }
 
-            if (imageFile == null || imageFile.filePath() == null) {
-                throw new RuntimeException("图片文件不能为空");
+            if (filename == null || filename.isBlank()) {
+                throw new RuntimeException("文件名不能为空");
             }
 
-            String contentType = imageFile.contentType();
-            if (contentType == null || !contentType.startsWith("image/")) {
-                throw new RuntimeException("只支持图片文件");
-            }
-
-            long size = Files.size(imageFile.filePath());
-            if (size == 0) {
-                throw new RuntimeException("文件不能为空");
-            }
-            if (size > 5L * 1024 * 1024) {
-                throw new RuntimeException("文件大小不能超过 5MB");
-            }
-
-            String originalName = imageFile.fileName();
-            if (originalName == null || originalName.isBlank()) {
-                originalName = "image";
-            }
-            String safeName = originalName.replaceAll("[^a-zA-Z0-9._-]", "_");
-            String fileName = System.currentTimeMillis() + "_" + safeName;
-
-            java.nio.file.Path targetDir = java.nio.file.Path.of(uploadDir).resolve("sessions").resolve(sid.toString());
-            java.nio.file.Path targetPath = targetDir.resolve(fileName);
-
-            Files.createDirectories(targetDir);
-            Files.copy(imageFile.filePath(), targetPath, StandardCopyOption.REPLACE_EXISTING);
-
-            SessionImageEntity image = new SessionImageEntity(sid, targetPath.toString());
+            String safeName = filename.replaceAll("[^a-zA-Z0-9._-]", "_");
+            SessionImageEntity image = new SessionImageEntity(sid, safeName);
             sessionImageRepository.persist(image);
 
-            return "/api/session-images/" + sid + "/" + fileName;
+            return image.getImageUrl();
         } catch (IllegalArgumentException e) {
-            Log.warn("上传 session 图片失败: " + e.getMessage());
-            throw new RuntimeException(e.getMessage());
-        } catch (IOException e) {
-            Log.warn("保存 session 图片失败: " + e.getMessage());
-            throw new RuntimeException("保存文件失败: " + e.getMessage());
+            Log.warn("登记 session 图片失败: " + e.getMessage());
+            throw new RuntimeException("无效的 session ID: " + e.getMessage());
         }
     }
 }
@@ -771,7 +737,7 @@ Expected: No errors.
 ```bash
 git add src/main/java/io/promptforge/resource/SessionImageResource.java \
   src/main/java/io/promptforge/tool/SessionImageTools.java
-git commit -m "feat(phase2): add SessionImageResource + upload_session_image MCP Tool"
+git commit -m "feat(phase2): add SessionImageResource + register_session_image MCP Tool"
 ```
 
 ---
@@ -814,31 +780,31 @@ class SessionImageToolsTest {
     SessionImageTools tools;
 
     @Test
-    void uploadSessionImage_invalidUuid_throwsRuntimeException() {
-        assertThatThrownBy(() -> tools.uploadSessionImage("not-a-uuid", null))
+    void registerSessionImage_invalidUuid_throwsRuntimeException() {
+        assertThatThrownBy(() -> tools.registerSessionImage("not-a-uuid", "image.png"))
                 .isInstanceOf(RuntimeException.class)
-                .hasMessageContaining("not-a-uuid");
+                .hasMessageContaining("无效的 session ID");
     }
 
     @Test
-    void uploadSessionImage_sessionNotFound_throwsRuntimeException() {
+    void registerSessionImage_sessionNotFound_throwsRuntimeException() {
         UUID sid = UUID.randomUUID();
         when(sessionRepository.findByIdOptional(sid)).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> tools.uploadSessionImage(sid.toString(), null))
+        assertThatThrownBy(() -> tools.registerSessionImage(sid.toString(), "image.png"))
                 .isInstanceOf(RuntimeException.class)
                 .hasMessageContaining("session 不存在");
     }
 
     @Test
-    void uploadSessionImage_sessionNotCompleted_throwsRuntimeException() {
+    void registerSessionImage_sessionNotCompleted_throwsRuntimeException() {
         UUID sid = UUID.randomUUID();
         AssembleSessionEntity session = new AssembleSessionEntity();
         session.id = sid;
         session.status = SessionStatus.IN_PROGRESS;
         when(sessionRepository.findByIdOptional(sid)).thenReturn(Optional.of(session));
 
-        assertThatThrownBy(() -> tools.uploadSessionImage(sid.toString(), null))
+        assertThatThrownBy(() -> tools.registerSessionImage(sid.toString(), "image.png"))
                 .isInstanceOf(RuntimeException.class)
                 .hasMessageContaining("session 未完成");
     }
